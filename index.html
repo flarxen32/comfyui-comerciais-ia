@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RTX 3070 · Dance Swap + Comercial FLOW — pipeline local</title>
+<style>
+:root{
+  --bg:#07090A; --bg2:#0D1014; --card:#10141A; --line:rgba(255,255,255,.09);
+  --text:#EDEFF2; --muted:#9099A8; --blue:#0053FF; --blue-soft:#4D86FF; --green:#17CE73; --amber:#F2B84B;
+  --head:Impact,"Haettenschweiler","Arial Narrow Bold","Arial Narrow",sans-serif;
+  --body:"Segoe UI",system-ui,-apple-system,Roboto,Helvetica,Arial,sans-serif;
+  --mono:"Cascadia Mono",Consolas,Menlo,monospace;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 var(--body);-webkit-font-smoothing:antialiased}
+a{color:var(--blue-soft);text-decoration:none} a:hover{text-decoration:underline}
+.hero{background:linear-gradient(180deg,#0053FF 0%,#0053FF 40%,#0040BC 62%,#02204C 80%,var(--bg) 100%);padding:26px 24px 88px;color:#fff}
+.hero-in{max-width:1180px;margin:0 auto}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.chip{border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:5px 13px;font-size:13px;font-weight:600;background:rgba(0,0,0,.18)}
+h1{font:400 clamp(40px,7.5vw,88px)/.98 var(--head);text-transform:uppercase;margin:40px 0 16px;max-width:980px}
+.lead{font-size:clamp(16px,2vw,20px);max-width:720px;color:rgba(255,255,255,.92);margin:0}
+.wrap{max-width:1180px;margin:-52px auto 0;padding:0 24px 80px}
+section{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:26px 28px;margin:0 0 26px}
+.eyebrow{font:400 13px var(--mono);color:var(--blue-soft);letter-spacing:.08em;text-transform:uppercase;margin:0 0 6px}
+h2{font:400 clamp(26px,3.6vw,40px)/1.05 var(--head);text-transform:uppercase;margin:0 0 14px}
+h3{font-size:17px;margin:24px 0 8px}
+p{margin:0 0 12px}
+.muted{color:var(--muted)}
+.sbs{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.sbs figure{margin:0;background:var(--bg2);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.sbs video{width:100%;display:block;aspect-ratio:16/9;background:#000}
+figcaption{padding:10px 14px;font-size:14px;color:var(--muted)}
+figcaption b{color:var(--text)}
+.refrow{display:flex;gap:16px;flex-wrap:wrap;align-items:flex-start;margin-top:16px}
+.refrow img{border-radius:12px;border:1px solid var(--line);display:block}
+.refs{display:flex;gap:10px;flex-wrap:wrap}
+.refs img{height:120px;border-radius:10px;border:1px solid var(--line)}
+pre{background:#0A0D11;border:1px solid var(--line);border-radius:12px;padding:14px 16px;overflow:auto;font:13.5px/1.6 var(--mono);white-space:pre-wrap;word-break:break-word}
+.meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin:14px 0}
+.meta div{background:var(--bg2);border:1px solid var(--line);border-radius:10px;padding:10px 14px;font-size:14px}
+.meta b{display:block;font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:600}
+.story{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin:14px 0}
+.story figure{margin:0}
+.story img{width:100%;border-radius:10px;border:1px solid var(--line);display:block}
+.story figcaption{font:600 12px var(--body);color:var(--muted);padding:6px 2px;text-align:center}
+.player{background:#000;border-radius:12px;border:1px solid var(--line);overflow:hidden}
+.player video{width:100%;display:block}
+.note{border-left:3px solid var(--blue);background:var(--bg2);border-radius:0 12px 12px 0;padding:12px 16px;margin:14px 0;font-size:15px}
+.note.ok{border-color:var(--green)}
+details{background:var(--bg2);border:1px solid var(--line);border-radius:12px;margin:10px 0;padding:0 16px}
+summary{cursor:pointer;padding:13px 0;font-weight:600}
+footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-size:14px;text-align:center}
+@media(max-width:860px){.sbs{grid-template-columns:1fr}.story{grid-template-columns:repeat(3,1fr)}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="hero-in">
+    <h1>Dança viral → vovó no ritmo</h1>
+    <p class="lead">Pipeline 100% local na RTX 3070 (8&nbsp;GB): reels viral de dança baixado da web, personagem nova criada no Krea&nbsp;2, coreografia transferida com MiniMax&nbsp;H3 R2V — e um comercial de 40&nbsp;s em plano contínuo para provar que dá pra fazer vídeo longo na 8&nbsp;GB.</p>
+    <div class="chips">
+      <span class="chip">ComfyUI 0.34 · porta 8189</span><span class="chip">Krea 2 Turbo 12B int8</span>
+      <span class="chip">MiniMax H3 ref2va + fl2va int8</span><span class="chip">Qwen3-VL 32B NVFP4</span>
+      <span class="chip">RTX 3070 · 8 GB VRAM</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+<!-- ============ NASCENTE v13 ============ -->
+<section id="nascente">
+  <p class="eyebrow">Novo · v13 · out/2026</p>
+  <h2><a href="moss13/index.html" style="color:inherit">NASCENTE — Civitai desbloqueada, chuva em A/B (v13) ↗</a></h2>
+  <p>Conta Civitai criada com Gmail temporário (emailnator) + <b>API key validada</b>: os LoRAs de água
+     antes presos no login agora baixam com <code>?token=</code>. <b>Beauty of rain</b> (Wan 5B e H3)
+     entrou em <b>A/B de gêmeos perfeitos</b> (mesma seed ± LoRA). Produto: <b>NASCENTE, água mineral</b> —
+     Lena na chuva e Caio no pós-chuva, respingos com gravidade real. Bônus: SageAttention 1.0.6
+     com kernel validado na 3070.
+     <a href="moss13/index.html">O desbloqueio, o A/B e os 2 reels →</a></p>
+</section>
+
+<!-- ============ QUEBRA v12 ============ -->
+<section id="quebra">
+  <p class="eyebrow">Novo · v12 · out/2026</p>
+  <h2><a href="moss12/index.html" style="color:inherit">QUEBRA — pesquisa em terra nova (v12) ↗</a></h2>
+  <p>Busca direta na API do Hugging Face (novo método, dribla o bloqueio da Civitai) revelou o
+     <b>LoRA de física espacial do H3</b> — testado em A/B com veredito <b>negativo honesto</b>
+     (H3 puro 9/10 vs LoRA 8/10 no snap). Produto: <b>QUEBRA, chocolate ao leite</b> — Nina e Téo
+     com atuação 9/10, fala transcrita perfeita, snap com física 9/10 e marca legível em plena queda.
+     <a href="moss12/index.html">Territórios novos, A/B e os 2 reels →</a></p>
+</section>
+
+<!-- ============ SOSSEGO v11 ============ -->
+<section id="sossego">
+  <p class="eyebrow">Novo · v11 · out/2026</p>
+  <h2><a href="moss11/index.html" style="color:inherit">SOSSEGO — LoRAs a bordo, atuação resolvida (v11) ↗</a></h2>
+  <p>A fraqueza apontada na v10 (traços de IA na atuação) foi resolvida com o <b>LoRA fal Realism-People</b>
+     empilhado no H3 + direção calma: Rafa com <b>10/10 de atuação e zero traços</b>, Clara 8,5–10.
+     Produto: <b>SOSSEGO, vela aromática</b> — 2 reels de 10 s, chama com física 9/10, rótulo 10/10.
+     <a href="moss11/index.html">O mapa de LoRAs, os reels e a receita final →</a></p>
+</section>
+
+<!-- ============ LUZ v10 ============ -->
+<section id="luz">
+  <p class="eyebrow">Novo · v10 · out/2026</p>
+  <h2><a href="moss10/index.html" style="color:inherit">LUZ — o primeiro reel patrocinado (v10) ↗</a></h2>
+  <p>Novo formato: <b>1 produto + 2 influenciadoras digitais + 2 reels de 10 s</b>. Bia (calma) e Duda
+     (energética) <b>falam PT-BR com lip sync gerado localmente</b> (H3 + still MOSS), estética UGC
+     phone-look com #publi. Produto: <b>LUZ, sérum facial</b> (textura viscosa — o regime que a IA acerta,
+     após a pesquisa da rodada). QA: rostos 9–10/10, falas transcritas por whisper, rótulo 10/10.
+     <a href="moss10/index.html">Os 2 reels e a pesquisa →</a></p>
+</section>
+
+<!-- ============ SOL v9 ============ -->
+<section id="sol">
+  <p class="eyebrow">Novo · v9 · out/2026</p>
+  <h2><a href="moss9/index.html" style="color:inherit">SOL — a versão do tempo real (v9) ↗</a></h2>
+  <p>A crítica da v8 (tudo em slow-mo, gravidade irreal) virou pesquisa e conserto: <b>prompt de
+     energia</b> (física 9/10 no QA), <b>re-temporização por FPS</b> (velocidade como parâmetro de
+     direção: 36/30/24fps por take) e <b>variedade de andamento</b> com herói lento curto e assumido.
+     Produto: <b>SOL, suco de laranja</b> — kit 16:9 + 9:16 + jingle, VO auditada por transcrição.
+     <a href="moss9/index.html">O A/B antes/depois, o kit e a jornada v1→v9 →</a></p>
+</section>
+
+<!-- ============ MATTA v8 ============ -->
+<section id="matta">
+  <p class="eyebrow">Novo · v8 · out/2026</p>
+  <h2><a href="moss8/index.html" style="color:inherit">MATTA — oitava iteração (v8) ↗</a></h2>
+  <p>A tese do <b>Wan 14B Lightning</b> foi julgada na máquina real: init 14 min/expert + 850 s/step —
+     <b>inviável na 8 GB</b> (workflow validado e pesos mantidos p/ o futuro). O kit seguiu no Turbo:
+     <b>MATTA, açaí de verdade</b> — 16:9 + 9:16 + jingle a 48 fps/LUFS, e o QA ganhou
+     <b>transcrição de áudio</b> (whisper audita a locução do master final).
+     <a href="moss8/index.html">Veredito 14B, kit e jornada v1→v8 →</a></p>
+</section>
+
+<!-- ============ CANAVIAL v7 ============ -->
+<section id="canavial">
+  <p class="eyebrow">Novo · v7 · out/2026</p>
+  <h2><a href="moss7/index.html" style="color:inherit">CANAVIAL — sétima iteração (v7) ↗</a></h2>
+  <p>O comercial virou <b>kit de mídia</b>: master 16:9 + <b>9:16 vertical nativa</b> (1080×1920 p/ reels,
+     testada a 9/10) + versão com jingle, todas a 48 fps e com <b>loudness normalizado (−14 LUFS)</b>.
+     Produto: <b>CANAVIAL, cachaça artesanal</b> — choro + locução Piper, rótulo com cedilha a 10/10.
+     <a href="moss7/index.html">Os 3 masters e a jornada v1→v7 →</a></p>
+</section>
+
+<!-- ============ RAIZ v6 ============ -->
+<section id="raiz">
+  <p class="eyebrow">Novo · v6 · out/2026</p>
+  <h2><a href="moss6/index.html" style="color:inherit">RAIZ — sexta iteração (v6) ↗</a></h2>
+  <p>A peça que faltava: <b>locução em português gerada localmente</b> (Piper TTS na CPU) mixada à bossa
+     nova do Ace-Step, <b>3 variantes do jingle</b> para escolher, e o teste honesto do take contínuo de
+     10&nbsp;s a 1080p (&gt;2&nbsp;h — inviável, documentado). Produto: <b>RAIZ, vinho tinto</b> —
+     1080p · 48 fps · QA 9–10/10. <a href="moss6/index.html">Dois masters, jingles e a jornada v1→v6 →</a></p>
+</section>
+
+<!-- ============ AMARGO v5 ============ -->
+<section id="amargo">
+  <p class="eyebrow">Novo · v5 · out/2026</p>
+  <h2><a href="moss5/index.html" style="color:inherit">AMARGO — quinta iteração (v5) ↗</a></h2>
+  <p>Testes controlados validaram as reservas da v4 e o comercial subiu para <b>Full HD nativo (1920×1080)</b>:
+     Turbo a 1080p com QA 10/10, <b>texto embossado estável sob dolly</b> ("AMARGO 70% CACAU" nítido em
+     movimento), e um bônus audacioso — <b>jingle cantado em português</b> (Ace-Step) como master alternativo
+     ao instrumental. 48 fps, ~37 min de takes. <a href="moss5/index.html">Os dois masters e a jornada v1→v5 →</a></p>
+</section>
+
+<!-- ============ AMBAR v4 ============ -->
+<section id="ambar">
+  <p class="eyebrow">Novo · v4 · out/2026</p>
+  <h2><a href="moss4/index.html" style="color:inherit">ÂMBAR — quarta iteração (v4) ↗</a></h2>
+  <p>O gargalo de VAE decode caiu (<b>VAEDecodeTiled: 22 → 4,4 s/frame</b>) e o comercial ficou
+     <b>100% 704p nativo</b>: hero Wan fp16 em 11,6 min (vs 68 na v3) + 3 takes Turbo em 3 min cada,
+     trilha instrumental gerada por IA (<b>Ace-Step 1.5</b>, 20 s de render) mixada ao diegético do H3,
+     48 fps, QA 8–10/10. Produto: <b>ÂMBAR, mel silvestre</b>.
+     <a href="moss4/index.html">Benchmark, timeline e a jornada v1→v4 →</a></p>
+</section>
+
+<!-- ============ GAROA v3 ============ -->
+<section id="garoa">
+  <p class="eyebrow">Novo · v3 · out/2026</p>
+  <h2><a href="moss3/index.html" style="color:inherit">GAROA — terceira iteração (v3) ↗</a></h2>
+  <p>Pesquisa da v3 testou a destilação <b>Turbo do Wan 5B</b> (sampling 56s! mas decode-bound — resultado
+     negativo documentado), <b>RIFE a 48 fps</b> no master (✓ nativo) e mapeou Ace-Step para trilha (v4).
+     Produto novo: <b>GAROA, cerveja artesanal IPA</b> — 20 s · 720p · 48 fps · trilha com direção musical
+     (arco guitarra→percussão→acorde) · QA por take com verificação letra-por-letra.
+     <a href="moss3/index.html">A jornada v1→v2→v3 completa →</a></p>
+</section>
+
+<!-- ============ SERRA v2 ============ -->
+<section id="serra">
+  <p class="eyebrow">Novo · v2 · out/2026</p>
+  <h2><a href="moss2/index.html" style="color:inherit">SERRA — o comercial refeito (v2) ↗</a></h2>
+  <p>Reavaliação do v1 (steps errados da LoRA turbo, 480p, zoompan trêmulo, órbita em produto) → matriz A/B
+     com QA por visão (<b>H3@4st 7/10 · H3@8st 9/10 · Wan 2.2@704p 9/10</b>) e um novo comercial híbrido:
+     <b>Wan 2.2 no shot hero + H3@8st nos demais + áudio H3</b>, end card MOSS upscalado 4×, 720p/20 s —
+     <b>SERRA, café de altitude</b>. <a href="moss2/index.html">Diagnóstico completo, matriz e o filme →</a></p>
+</section>
+
+<!-- ============ MOSS-IMAGE ============ -->
+<section id="moss">
+  <p class="eyebrow">Novo · out/2026</p>
+  <h2><a href="moss/index.html" style="color:inherit">MOSS-Image → comercial de 20 s ↗</a></h2>
+  <p>Novo modelo open-weights da OpenMOSS (DiT 5B, <b>Apache-2.0</b>) testado a fundo no ComfyUI atualizado para
+     v0.42.3: 6 stills publicitários com <b>texto renderizado perfeitamente dentro da imagem</b> (inclusive
+     "Onde a floresta mora em você." com acentos), 2 takes de vídeo com áudio via MiniMax H3 I2V e um
+     <b>comercial de 20 s em 720p</b> para a marca fictícia MOSS Eau de Parfum — tudo local na RTX 3070.
+     <a href="moss/index.html">Página completa do projeto →</a></p>
+</section>
+
+<!-- ============ DANCE SWAP ============ -->
+<section id="danceswap">
+  <p class="eyebrow">Entregável 1 · Motion transfer</p>
+  <h2>Dance swap — o vídeo viral e a vovó</h2>
+  <p>À esquerda, os 10 segundos exatos do vídeo de dança viral baixado. À direita, o MiniMax H3 <b>R2V</b>
+     (reference-to-video) transferindo a coreografia inteira para a personagem criada no Krea 2 —
+     mesma coreografia, mesmo enquadramento, mesma <b>trilha sonora original</b> (o H3 gera vídeo com áudio junto).</p>
+
+  <div class="sbs">
+    <figure>
+      <video src="dance/dance_ref_832.mp4" controls loop muted playsinline></video>
+      <figcaption><b>Original</b> — clipe viral de dança (10 s) recortado do vídeo "Chris Brown – Under The Influence | Feelion choreography", YouTube, 1,3 M views. <a href="https://www.youtube.com/watch?v=UxG2opvW4c0" target="_blank" rel="noopener">fonte ↗</a></figcaption>
+    </figure>
+    <figure>
+      <video src="dance/dance_vovo.mp4" controls loop playsinline></video>
+      <figcaption><b>Resultado</b> — a vovó do Krea 2 executando a mesma coreografia (MiniMax H3 R2V, 243 frames @ 24 fps, 4 steps turbo).</figcaption>
+    </figure>
+  </div>
+
+  <h3>Imagem de referência (identidade)</h3>
+  <p>Criada localmente com <b>Krea 2 Turbo 12B int8</b> (~22 s por imagem na 3070). A seed 41000 foi a vencedora entre 3 candidatas:</p>
+  <div class="refs">
+    <img src="dance/vovo_832.png" alt="Personagem escolhida: vovó estilosa">
+    <img src="dance/chars/krea2_turbo_api-20261016-203830_00001_.png" alt="Candidata seed 41007">
+    <img src="dance/chars/krea2_turbo_api-20261016-203852_00001_.png" alt="Candidata seed 41013">
+  </div>
+  <p class="muted" style="font-size:13.5px;margin-top:8px">Da esquerda p/ direita: seed 41000 (escolhida), 41007, 41013.</p>
+
+  <h3>Prompts usados</h3>
+  <details open><summary>Personagem — Krea 2 Turbo (t2i)</summary>
+<pre>Full body photograph of a stylish Brazilian grandmother in her early seventies, short silver-white hair,
+warm confident smile, gold-rimmed sunglasses, blue denim jacket over a white t-shirt, relaxed blue jeans,
+crisp white sneakers, standing with one hand on her hip, plain light gray studio background, soft even
+lighting, photorealistic, sharp focus
+
+seed 41000 · 1344x768 · 8 steps · cfg 1 · ~22 s (quente) na RTX 3070</pre></details>
+
+  <details><summary>Dança — MiniMax H3 R2V (ref_image + ref_video → vídeo)</summary>
+<pre>The stylish Brazilian grandmother in her early seventies from &lt;Picture 1&gt;, with short silver-white hair,
+gold-rimmed sunglasses, blue denim jacket over a white t-shirt, relaxed blue jeans and crisp white sneakers,
+performs exactly the same dance choreography as the dancer in &lt;Video 1&gt;, copying every move, every body roll,
+hip movement and arm gesture with the same timing and energy. Same room, same framing and same static camera
+as &lt;Video 1&gt;, full body visible from head to feet. Her face, hair and outfit stay sharp, stable and consistent
+throughout the video. Keep the music soundtrack from &lt;Video 1&gt; exactly as it is.
+
+ref_image = personagem (Picture 1) · ref_video = clipe de dança (Video 1) com áudio
+832x480 · 243 frames @ 24 fps · 4 steps (LoRA turbo) · seed 20261016 · ~46 min na RTX 3070</pre></details>
+
+  <div class="meta">
+    <div><b>Modelo vídeo</b>minimax_h3_ref2va_pruned_int8_convrot</div>
+    <div><b>LoRA</b>ref2v_turbo_4step_v0.1 (força 1.0)</div>
+    <div><b>Text encoder</b>Qwen3-VL 32B NVFP4</div>
+    <div><b>Resolução</b>832×480 (0,4 MP) @ 24 fps</div>
+    <div><b>Tempo total</b>~46 min (init 13,6 min + steps)</div>
+  </div>
+  <div class="note">Por que a coreografia "vibra" em vez de ser pose-por-pose exata: o R2V é <b>vibe transfer</b>
+    — ele interpreta o movimento do vídeo de referência. Para pose exata frame a frame, o caminho indicado pela
+    pesquisa de out/2026 é o <b>MiniMax H3 Fun ControlNet Union 2.0</b> (patch pruned int8 do Kijai, ~mesmo pipeline).
+    Não estava instalado; fica como upgrade recomendado.</div>
+</section>
+
+<!-- ============ COMERCIAL ============ -->
+<section id="comercial">
+  <p class="eyebrow">Entregável 2 · Vídeo longo (40 s)</p>
+  <h2>Comercial FLOW — "Idade não define o ritmo"</h2>
+  <p>Para demonstrar <b>vídeo mais longo</b> numa placa de 8 GB, usei a técnica de storyboard em cadeia com
+     <b>âncoras compartilhadas</b>: cada take de 10 s entra com first_frame = last_frame do take anterior
+     (âncoras geradas no Krea 2 com a <b>mesma seed 41000</b> e a mesma descrição palavra por palavra), e o
+     ComfyUI processa a fila encadeada com o modelo quente. 4 takes × 10 s = <b>40 segundos</b> com fala em
+     português com lip sync, música amapiano gerada junto e um corte seco no meio (como num comercial de verdade).</p>
+
+  <div class="player"><video src="comercial/flow_commercial.mp4" controls playsinline></video></div>
+  <p class="muted" style="font-size:13.5px">Takes 1–2 (rua) e 3–4 (praça) são planos contínuos entre si; a junção rua→praça é um corte de montagem.</p>
+
+  <h3>Storyboard — as 6 âncoras (Krea 2, seed 41000)</h3>
+  <div class="story">
+    <figure><img src="comercial/anchors/flowA.png" alt="Âncora A"><figcaption>A · amarrando o tênis</figcaption></figure>
+    <figure><img src="comercial/anchors/flowB.png" alt="Âncora B"><figcaption>B · pronta (last T1 = first T2)</figcaption></figure>
+    <figure><img src="comercial/anchors/flowC.png" alt="Âncora C"><figcaption>C · em marcha (last T2)</figcaption></figure>
+    <figure><img src="comercial/anchors/flowC2.png" alt="Âncora C2"><figcaption>C' · chega na praça (first T3)</figcaption></figure>
+    <figure><img src="comercial/anchors/flowD.png" alt="Âncora D"><figcaption>D · pose final (last T3 = first T4)</figcaption></figure>
+    <figure><img src="comercial/anchors/flowE.png" alt="Âncora E"><figcaption>E · tagline (last T4)</figcaption></figure>
+  </div>
+
+  <h3>Como cada take foi configurado</h3>
+  <div class="meta">
+    <div><b>Modelo</b>minimax_h3_fl2va_pruned_int8</div>
+    <div><b>LoRA</b>fl2v_turbo_8step_v1.0</div>
+    <div><b>Takes</b>4 × 243 frames @ 24 fps</div>
+    <div><b>Steps</b>8 (âncora dupla exige 8)</div>
+    <div><b>Resolução</b>832×480</div>
+    <div><b>Render total</b>~32 min (fila encadeada)</div>
+  </div>
+
+  <details><summary>Prompt — Take 1 (A → B) · rua, manhã</summary>
+<pre>A stylish Brazilian grandmother in her early seventies, short silver-white hair, gold-rimmed sunglasses,
+blue denim jacket over a white t-shirt, relaxed blue jeans and crisp white sneakers, on a quiet Brazilian
+suburban street with small colorful houses in warm morning light. She finishes tying the laces of her white
+sneakers sitting on the front step of the yellow house, then stands up, stretches her back with a confident
+smile and puts her hands on her hips looking straight at the camera. Her face stays sharp, stable and
+consistent throughout the video. Camera: slow gentle push-in from wide to medium. Ambient sound: morning
+birds, a distant rooster, and a soft uplifting amapiano piano melody starting.</pre></details>
+  <details><summary>Prompt — Take 2 (B → C) · caminhada rítmica</summary>
+<pre>… (mesma frase de personagem e cenário, palavra por palavra) … She starts walking briskly down the sidewalk
+with light dance steps, swinging her arms in rhythm and bobbing her head to the beat, greeting a neighbor who
+waves back, ending mid-stride with one foot planted forward and a cheerful expression. Camera: smooth tracking
+shot alongside her at steady walking pace. Audio: the upbeat amapiano beat grows with deep bass and shakers,
+her footsteps landing in rhythm.</pre></details>
+  <details><summary>Prompt — Take 3 (C' → D) · praça, dança plena</summary>
+<pre>… (personagem idêntica; cenário: small sunny neighborhood plaza with palm trees and a bench in golden
+morning light) … She dances joyfully with full amapiano energy - body rolls, hip swings and wave-like arm
+movements - building up to a triumphant finish with both arms raised high while neighbors clap around her.
+Camera: static wide shot. Audio: uplifting amapiano music at full energy with clapping and cheerful voices.</pre></details>
+  <details open><summary>Prompt — Take 4 (D → E) · tagline em PT-BR com lip sync</summary>
+<pre>… She lowers her arms, catches her breath with a proud smile, picks up one white sneaker from the bench and
+holds it up at chest height presenting it to the camera, speaking Brazilian Portuguese with accurate lip sync,
+saying: FLOW. Idade não define o ritmo. With the word FLOW written in large bold white capital letters
+appearing on screen behind her. Camera: slow push-in to a medium shot. Audio: the amapiano music resolves
+warmly, palm leaves rustling in the morning breeze.
+
+Frase soletrada como texto ("the word FLOW written in large bold white capital letters") — só dizer
+"logo FLOW" embaralha as letras. Fala com acentuação correta: o TTS lê a grafia literal.</pre></details>
+
+  <div class="note ok"><b>Lição do guia MiniMax H3 aplicada aqui:</b> as regras de continuação do guia
+    Motion Context V2 (cenário repetido palavra por palavra, âncoras em poses estáveis, fala curta no fim,
+    regra de VRAM frames × megapixels) valem igual para a cadeia de takes — só trocamos o "motion context"
+    do Easy-Media por âncoras first/last, que não exige instalar nada novo e já estava validada na 3070.</div>
+</section>
+
+<!-- ============ PIPELINE ============ -->
+<section id="pipeline">
+  <p class="eyebrow">Como foi feito</p>
+  <h2>Pipeline completo, 100% local</h2>
+  <pre>reels viral (YouTube, yt-dlp)                     Krea 2 Turbo 12B int8 (t2i)
+  │ recorte 10 s · 832x480 · 24 fps · ffmpeg        │ seed 41000 → vovó + 6 âncoras do comercial
+  ▼                                                 ▼
+  └──────────────► MiniMax H3 R2V ◄─────────────────┘    MiniMax H3 FL2VA (i2v âncora dupla)
+                   ref2va int8 + LoRA 4step               fl2va int8 + LoRA 8step
+                   ~46 min / 10 s                         4 takes × ~8 min = ~32 min
+                   ▼                                     ▼
+             dance/dance_vovo.mp4                comercial/flow_commercial.mp4 (concat ffmpeg)</pre>
+  <p class="muted">GPU: RTX 3070 8 GB · engine ComfyUI 0.34.0 na porta 8189 (python 3.13, torch cu130) ·
+     modelos Krea 2 / H3 / Qwen3-VL reaproveitados do StabilityMatrix via extra_model_paths.yaml — nenhum download novo foi necessário.</p>
+  <div class="note"><b>Licenças (uso comercial):</b> Krea 2 grátis &lt; US$1 M/ano · MiniMax H3 grátis &lt; US$20 M/ano
+    (excluído em US/EU/UK/Coreia do Sul — Brasil OK) · destilação do H3 proibida. Vídeo de dança original:
+    coreografia "Feelion" (YouTube) — uso aqui é demonstração local; para uso comercial do dance swap,
+    substituir por coreografia própria ou licenciada.</div>
+</section>
+
+<footer>Gerado localmente em 16/10/2026 · RTX 3070 8 GB · ComfyUI + Krea 2 + MiniMax H3 — sem API paga</footer>
+</div>
+</body>
+</html>
