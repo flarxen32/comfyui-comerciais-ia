@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GAROA v3 · Terceira iteração — o pipeline de comercial IA local</title>
+<style>
+:root{
+  --bg:#07090A; --bg2:#0D1014; --card:#10141A; --line:rgba(255,255,255,.09);
+  --text:#EDEFF2; --muted:#9099A8; --blue:#0053FF; --blue-soft:#4D86FF; --green:#17CE73; --amber:#F2B84B;
+  --head:Impact,"Haettenschweiler","Arial Narrow Bold","Arial Narrow",sans-serif;
+  --body:"Segoe UI",system-ui,-apple-system,Roboto,Helvetica,Arial,sans-serif;
+  --mono:"Cascadia Mono",Consolas,Menlo,monospace;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 var(--body);-webkit-font-smoothing:antialiased}
+a{color:var(--blue-soft);text-decoration:none} a:hover{text-decoration:underline}
+.hero{background:linear-gradient(180deg,#0E1B2E 0%,#173A5C 26%,#3B2E10 58%,#1A1207 84%,var(--bg) 100%);padding:26px 24px 88px;color:#fff}
+.hero-in{max-width:1180px;margin:0 auto}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.chip{border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:5px 13px;font-size:13px;font-weight:600;background:rgba(0,0,0,.22)}
+h1{font:400 clamp(40px,7.5vw,88px)/.98 var(--head);text-transform:uppercase;margin:40px 0 16px;max-width:980px}
+.lead{font-size:clamp(16px,2vw,20px);max-width:800px;color:rgba(255,255,255,.92);margin:0}
+.wrap{max-width:1180px;margin:-52px auto 0;padding:0 24px 80px}
+section{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:26px 28px;margin:0 0 26px}
+.eyebrow{font:400 13px var(--mono);color:var(--amber);letter-spacing:.08em;text-transform:uppercase;margin:0 0 6px}
+h2{font:400 clamp(26px,3.6vw,40px)/1.05 var(--head);text-transform:uppercase;margin:0 0 14px}
+h3{font-size:17px;margin:24px 0 8px}
+p{margin:0 0 12px}
+.muted{color:var(--muted)}
+.player{background:#000;border-radius:12px;border:1px solid var(--line);overflow:hidden}
+.player video{width:100%;display:block}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:16px 0}
+.gallery figure{margin:0;background:var(--bg2);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.gallery img{width:100%;display:block;background:#000}
+figcaption{padding:10px 13px;font-size:13.5px;color:var(--muted);line-height:1.5}
+figcaption b{color:var(--text)}
+.ab{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:16px 0}
+.ab figure{margin:0;background:var(--bg2);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.ab video{width:100%;display:block;aspect-ratio:16/9;background:#000}
+.timeline{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin:14px 0}
+.timeline figure{margin:0}
+.timeline img{width:100%;border-radius:10px;border:1px solid var(--line);display:block}
+.timeline figcaption{font:600 12px var(--body);color:var(--muted);padding:6px 2px;text-align:center}
+table{border-collapse:collapse;width:100%;font-size:14.5px;margin:10px 0}
+th,td{border:1px solid var(--line);padding:8px 12px;text-align:left;vertical-align:top}
+th{background:var(--bg2);font-weight:600;color:var(--muted);text-transform:uppercase;font-size:12px;letter-spacing:.05em}
+.note{border-left:3px solid var(--amber);background:var(--bg2);border-radius:0 12px 12px 0;padding:12px 16px;margin:14px 0;font-size:15px}
+.note.ok{border-color:var(--green)}
+details{background:var(--bg2);border:1px solid var(--line);border-radius:12px;margin:10px 0;padding:0 16px}
+summary{cursor:pointer;padding:13px 0;font-weight:600}
+.evo{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:16px 0}
+.evo figure{margin:0;background:var(--bg2);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.evo video{width:100%;display:block;aspect-ratio:16/9;background:#000}
+footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-size:14px;text-align:center}
+@media(max-width:960px){.ab{grid-template-columns:1fr 1fr}.evo{grid-template-columns:1fr}}
+@media(max-width:560px){.ab,.evo,.gallery{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="hero-in">
+    <h1>Garoa · terceira iteração</h1>
+    <p class="lead">Nova rodada de pesquisa e reavaliação — desta vez o alvo era <b>unificar tudo em 704p</b>
+       com a destilação Turbo do Wan e <b>suavizar o movimento</b> com interpolação RIFE a 48&nbsp;fps. A pesquisa
+       revelou um gargalo inesperado (VAE decode) e o v3 entrega o produto mais coeso até agora:
+       <b>GAROA, cerveja artesanal IPA</b> — trilha sonora dirigida, câmera com intenção, 720p/20&nbsp;s.</p>
+    <div class="chips">
+      <span class="chip">MOSS-Image · stills 1600×900</span><span class="chip">Wan 2.2 fp16 20st · hero 704p</span>
+      <span class="chip">H3 @ 8 steps · 3 shots + trilha</span><span class="chip">RIFE v4.26 · 48 fps</span>
+      <span class="chip">QA VLM local em cada take</span><span class="chip">RTX 3070 · 8 GB</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+<!-- ============ PESQUISA ============ -->
+<section id="pesquisa">
+  <p class="eyebrow">Pesquisa + reavaliação · out/2026</p>
+  <h2>O que a pesquisa desta versão revelou</h2>
+  <table>
+    <tr><th>Tese testada</th><th>Resultado</th><th>Consequência no v3</th></tr>
+    <tr><td>Wan 2.2 5B <b>Turbo</b> (distilação 4 steps, GGUF Q5 3,6 GB cabe inteiro na VRAM) → tudo em 704p</td>
+        <td><b>Meia-vitória:</b> sampling caiu de ~50 min para <b>56 s</b> (14 s/step!)… mas o take levou 50 min mesmo assim — o <b>VAE decode de 121 frames a 704p custa ~45 min</b> (22 s/frame) na 8 GB. QA 8/10 (vs 9/10 do fp16 20st).</td>
+        <td>Turbo documentado como <b>resultado negativo honesto</b>; híbrido v2 mantido (hero fp16 20st, resto H3@8st)</td></tr>
+    <tr><td>RIFE nativo (FrameInterpolate + rife_v4.26) → 48 fps</td><td>✓ nativo no ComfyUI 0.42, modelo de 22 MB</td><td>Motion duplamente mais fluido no master final</td></tr>
+    <tr><td>Wan 2.6/2.7 para qualidade maior</td><td>Sem pesos abertos locais — templates do ComfyUI são <b>só API de nuvem</b></td><td>Descartado</td></tr>
+    <tr><td>LTX-2.5 (22B, vídeo+áudio)</td><td>Licença community (teto US$10M), 16 GB oficial</td><td>Descartado</td></tr>
+    <tr><td>Ace-Step 1.5 para trilha sonora</td><td>Nativo e viável (~10 GB de pesos p/ pipeline XL)</td><td><b>Reserva v4</b> — no v3 a trilha vem do H3 com direção musical no prompt</td></tr>
+  </table>
+  <div class="note"><b>A descoberta mais valiosa:</b> na 8 GB, o pipeline de vídeo local agora é
+     <b>decode-bound</b>, não sampling-bound. Destilar o sampler não adianta enquanto o VAE 3D do Wan
+     comer 22 s por frame a 704p. Isso muda o roadmap: o próximo salto vem de decode mais rápido
+     (VAE tiled otimizado / VAE menor / resolução do latent), não de menos steps.</div>
+</section>
+
+<!-- ============ MATRIZ ============ -->
+<section id="ab">
+  <p class="eyebrow">Matriz A/B ampliada · mesmo still, mesmo prompt (espresso pour do SERRA)</p>
+  <h2>Quatro engines no mesmo frame</h2>
+  <div class="ab">
+    <figure>
+      <video src="../moss2/video/ab_h3_4st.mp4" controls loop muted playsinline></video>
+      <figcaption><b>H3 @ 4st</b> · 132 s · QA <b>7/10</b> (v1: banding)</figcaption>
+    </figure>
+    <figure>
+      <video src="../moss2/video/ab_h3_8st.mp4" controls loop muted playsinline></video>
+      <figcaption><b>H3 @ 8st</b> · 198 s · QA <b>9/10</b> · 832×480 + áudio</figcaption>
+    </figure>
+    <figure>
+      <video src="../moss2/video/ab_wan20.mp4" controls loop muted playsinline></video>
+      <figcaption><b>Wan fp16 20st</b> · 3223 s · QA <b>9/10</b> · 1280×704 nativo</figcaption>
+    </figure>
+    <figure>
+      <video src="video/ab_turbo4.mp4" controls loop muted playsinline></video>
+      <figcaption><b>Wan Turbo Q5 4st</b> · 3013 s (sampling 56 s!) · QA <b>8/10</b> · 704p</figcaption>
+    </figure>
+  </div>
+  <p class="muted">O take Turbo prova o ponto: mesmo com sampling 53× mais rápido, o tempo total não cai
+     porque o VAE decode domina. A leitura correta da tabela: <b>custo/take ≈ constante em ~50 min para
+     qualquer 704p</b> nesta GPU — a escolha entre engines 704p é só de qualidade, nunca de tempo.</p>
+</section>
+
+<!-- ============ COMERCIAL ============ -->
+<section id="comercial">
+  <p class="eyebrow">O produto novo · 20 s · 1280×720 · 48 fps</p>
+  <h2>GAROA — IPA da serra</h2>
+  <div class="player"><video src="video/garoa_commercial_48.mp4" controls playsinline></video></div>
+  <p class="muted" style="margin-top:8px">Versão 48 fps (RIFE) · a de 24 fps está em <code>video/garoa_commercial.mp4</code></p>
+
+  <h3>Linha do tempo (4,4 + 3,8 + 4,6 + 3,4 + 3,8 = 20,0 s)</h3>
+  <div class="timeline">
+    <figure><img src="stills/s3_hops.png" alt=""><figcaption>0–4,4 s · Lúpulo na chuva · H3@8st · dolly sutil</figcaption></figure>
+    <figure><img src="stills/s3_bottle.png" alt=""><figcaption>4,4–8,2 s · Garrafa + rótulo · H3@8st · câmera travada</figcaption></figure>
+    <figure><img src="stills/s3_pour.png" alt=""><figcaption>8,2–12,8 s · Hero colada · <b>Wan 704p</b></figcaption></figure>
+    <figure><img src="stills/s3_glass.png" alt=""><figcaption>12,8–16,2 s · Copo na janela · H3@8st · dolly sutil</figcaption></figure>
+    <figure><img src="stills/s3_endcard.png" alt=""><figcaption>16,2–20 s · End card · MOSS + UltraSharp</figcaption></figure>
+  </div>
+
+  <h3>Stills (MOSS-Image SFT · 1600×900)</h3>
+  <div class="gallery">
+    <figure><img src="stills/s3_hops.png" alt=""><figcaption><b>Lúpulo</b> · QA 9/10 · seed 3101</figcaption></figure>
+    <figure><img src="stills/s3_bottle.png" alt=""><figcaption><b>Garrafa</b> — rótulo "GAROA / IPA DA SERRA" · QA <b>10/10</b> · seed 3202</figcaption></figure>
+    <figure><img src="stills/s3_pour.png" alt=""><figcaption><b>Colada (frame do hero)</b> · QA 9/10 · seed 3303</figcaption></figure>
+    <figure><img src="stills/s3_glass.png" alt=""><figcaption><b>Copo</b> · QA 9/10 · seed 3404</figcaption></figure>
+    <figure><img src="stills/s3_endcard.png" alt=""><figcaption><b>End card</b> — "GAROA · IPA DA SERRA · LUPULO DA CHUVA · <i>Amarga que nem saudade.</i>" · verificado letra por letra · seed 3505</figcaption></figure>
+    <figure><img src="stills/s3_endcard_up_00001_.png" alt=""><figcaption><b>End card 4× UltraSharp</b> (2560×1440)</figcaption></figure>
+  </div>
+
+  <details><summary>Novidades de áudio e câmera no v3</summary>
+<pre>Trilha dirigida: cada doador H3 recebe direção musical contínua no prompt —
+"slow melancholic indie guitar theme" → "theme continuing" → "swelling with light percussion"
+→ "resolving warmly with a final chord". O H3 costuma respeitar; a edição encadeia com micro-crossfades.
+
+Câmera com intenção: dolly-in QUASE imperceptível nos planos de abertura/fecho (Wan/H3 entendem
+a linguagem), câmera travada no rótulo (texto) e no hero. A regra continua: nada de órbita em texto.</pre>
+  </details>
+</section>
+
+<!-- ============ EVOLUÇÃO ============ -->
+<section id="evolucao">
+  <p class="eyebrow">A jornada completa</p>
+  <h2>v1 → v2 → v3</h2>
+  <div class="evo">
+    <figure>
+      <video src="../moss/video/moss_commercial.mp4" controls muted playsinline></video>
+      <figcaption><b>v1 · MOSS perfume</b> — LoRA 8st rodada a 4st, 480p, QA 7/10 · <a href="../moss/index.html">página →</a></figcaption>
+    </figure>
+    <figure>
+      <video src="../moss2/video/serra_commercial.mp4" controls muted playsinline></video>
+      <figcaption><b>v2 · SERRA café</b> — steps corrigidos, híbrido H3/Wan, QA 9–9,5/10 · <a href="../moss2/index.html">página →</a></figcaption>
+    </figure>
+    <figure>
+      <video src="video/garoa_commercial_48.mp4" controls muted playsinline></video>
+      <figcaption><b>v3 · GAROA cerveja</b> — 48 fps, trilha dirigida, dolly sutil, QA por take · esta página</figcaption>
+    </figure>
+  </div>
+  <table>
+    <tr><th></th><th>v1</th><th>v2</th><th>v3</th></tr>
+    <tr><td>Produto</td><td>Perfume MOSS</td><td>Café SERRA</td><td>Cerveja GAROA</td></tr>
+    <tr><td>I2V</td><td>H3@4st (errado)</td><td>H3@8st + Wan fp16 hero</td><td>H3@8st + Wan fp16 hero (dolly dirigido)</td></tr>
+    <tr><td>Fps do master</td><td>24</td><td>24</td><td><b>48 (RIFE)</b></td></tr>
+    <tr><td>Áudio</td><td>ambiência H3 bruta</td><td>ambiência H3</td><td><b>trilha com direção musical</b> (arco guitarra→percussão→acorde final)</td></tr>
+    <tr><td>QA por take</td><td>olhômetro</td><td>VLM por frame</td><td>VLM por take + verificação letra-por-letra com zoom</td></tr>
+  </table>
+  <div class="note ok"><b>Para a v4 (reservas mapeadas):</b> trilha com Ace-Step 1.5 (nativo, ~10 GB),
+     ataque ao gargalo de VAE decode (tiled otimizado / VAE menor), e um teste de texto-em-movimento
+     com o rótulo GAROA sob dolly (guardar câmera travada se falhar).</div>
+</section>
+
+<footer>
+  Engines: MOSS-Image · Wan 2.2 TI2V-5B (+Turbo GGUF testado) · MiniMax H3 · RIFE v4.26 — produtos fictícios p/ avaliação ·
+  <a href="../index.html">index do workspace</a> · out/2026
+</footer>
+</div>
+</body>
+</html>
