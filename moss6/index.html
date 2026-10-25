@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RAIZ v6 · Sexta iteração — locução PT-BR local + jingles variantes</title>
+<style>
+:root{--bg:#07090A;--bg2:#0D1014;--card:#10141A;--line:rgba(255,255,255,.09);--text:#EDEFF2;--muted:#9099A8;--blue:#0053FF;--blue-soft:#4D86FF;--green:#17CE73;--amber:#F2B84B;--head:Impact,"Haettenschweiler","Arial Narrow Bold","Arial Narrow",sans-serif;--body:"Segoe UI",system-ui,-apple-system,Roboto,Helvetica,Arial,sans-serif;--mono:"Cascadia Mono",Consolas,Menlo,monospace}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 var(--body);-webkit-font-smoothing:antialiased}
+a{color:var(--blue-soft);text-decoration:none} a:hover{text-decoration:underline}
+.hero{background:linear-gradient(180deg,#1C0510 0%,#3A0A1E 28%,#570E16 55%,#160408 84%,var(--bg) 100%);padding:26px 24px 88px;color:#fff}
+.hero-in{max-width:1180px;margin:0 auto}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.chip{border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:5px 13px;font-size:13px;font-weight:600;background:rgba(0,0,0,.3)}
+h1{font:400 clamp(40px,7.5vw,88px)/.98 var(--head);text-transform:uppercase;margin:40px 0 16px;max-width:980px}
+.lead{font-size:clamp(16px,2vw,20px);max-width:820px;color:rgba(255,255,255,.92);margin:0}
+.wrap{max-width:1180px;margin:-52px auto 0;padding:0 24px 80px}
+section{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:26px 28px;margin:0 0 26px}
+.eyebrow{font:400 13px var(--mono);color:var(--amber);letter-spacing:.08em;text-transform:uppercase;margin:0 0 6px}
+h2{font:400 clamp(26px,3.6vw,40px)/1.05 var(--head);text-transform:uppercase;margin:0 0 14px}
+h3{font-size:17px;margin:24px 0 8px}
+p{margin:0 0 12px}
+.muted{color:var(--muted)}
+.player{background:#000;border-radius:12px;border:1px solid var(--line);overflow:hidden}
+.player video{width:100%;display:block}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:16px 0}
+.gallery figure{margin:0;background:var(--bg2);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.gallery img{width:100%;display:block;background:#000}
+figcaption{padding:10px 13px;font-size:13.5px;color:var(--muted);line-height:1.5}
+figcaption b{color:var(--text)}
+.timeline{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin:14px 0}
+.timeline figure{margin:0}
+.timeline img{width:100%;border-radius:10px;border:1px solid var(--line);display:block}
+.timeline figcaption{font:600 12px var(--body);color:var(--muted);padding:6px 2px;text-align:center}
+table{border-collapse:collapse;width:100%;font-size:14.5px;margin:10px 0}
+th,td{border:1px solid var(--line);padding:8px 12px;text-align:left;vertical-align:top}
+th{background:var(--bg2);font-weight:600;color:var(--muted);text-transform:uppercase;font-size:12px;letter-spacing:.05em}
+.note{border-left:3px solid var(--amber);background:var(--bg2);border-radius:0 12px 12px 0;padding:12px 16px;margin:14px 0;font-size:15px}
+.note.ok{border-color:var(--green)}
+details{background:var(--bg2);border:1px solid var(--line);border-radius:12px;margin:10px 0;padding:0 16px}
+summary{cursor:pointer;padding:13px 0;font-weight:600}
+.sbs2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:16px 0}
+.sbs2 figure{margin:0;background:var(--bg2);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.sbs2 video{width:100%;display:block;background:#000}
+audio{width:100%;margin:4px 0 10px}
+footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-size:14px;text-align:center}
+@media(max-width:860px){.sbs2{grid-template-columns:1fr}.gallery{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.gallery{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="hero-in">
+    <h1>Raiz · sexta iteração</h1>
+    <p class="lead">A v6 adiciona a peça que faltava no comercial local: <b>locução em português</b> gerada
+       na própria CPU (Piper TTS), <b>três variantes do jingle</b> para escolher, e o teste honesto do
+       take longo contínuo. Produto novo: <b>RAIZ, vinho tinto</b> — paleta ruby inédita na série,
+       1080p&nbsp;·&nbsp;48&nbsp;fps.</p>
+    <div class="chips">
+      <span class="chip">Locução PT-BR · Piper TTS (CPU)</span><span class="chip">Bossa nova + 3 jingles (Ace-Step)</span>
+      <span class="chip">Take 10 s @1080p: testado, &gt;2 h — inviável</span><span class="chip">Takes 9–10/10 no QA</span>
+      <span class="chip">RTX 3070 · 8 GB</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+<section id="testes">
+  <p class="eyebrow">Testes controlados</p>
+  <h2>O que a v6 testou</h2>
+  <table>
+    <tr><th>Teste</th><th>Resultado</th></tr>
+    <tr><td><b>Locução PT-BR local</b> — Piper TTS 1.8 (pip, CPU) + voz pt_BR-faber-medium (61 MB)</td>
+        <td>✓ Duas falas ("Feito de tempo e silêncio." / "RAIZ. O tinto que desce devagar.") em 1,5–2,2 s cada, mixadas no master A. Pipeline de voz 100% local e offline.</td></tr>
+    <tr><td><b>Take contínuo de 10 s a 1080p</b> (241 frames, Turbo)</td>
+        <td><b>Inválido p/ produção nesta GPU: &gt;2 h de decode</b> (abortado). O custo do take dobra a cada dobro de frames — takes de 5 s seguem como padrão; 10 s cabe a 704p (~25 min) se um spot pedir.</td></tr>
+    <tr><td><b>Jingle em variantes</b> (mesma letra, 3 seeds)</td>
+        <td>✓ v1/v2/v3 geradas em 10 s cada — a melhor entra no master B, as três disponíveis abaixo para ouvir.</td></tr>
+  </table>
+</section>
+
+<section id="comercial">
+  <p class="eyebrow">O produto novo · 20 s · 1920×1080 · 48 fps</p>
+  <h2>RAIZ — o tinto que desce devagar</h2>
+  <div class="sbs2">
+    <figure>
+      <video src="video/raiz_commercial_theme_48.mp4" controls playsinline></video>
+      <figcaption><b>Master A · bossa + locução</b> — tema "intimate bossa nova guitar, soft brush drums,
+        warm cello" (Ace-Step) + diegético H3 + <b>locução Piper PT-BR</b> em dois momentos.</figcaption>
+    </figure>
+    <figure>
+      <video src="video/raiz_commercial_jingle_48.mp4" controls playsinline></video>
+      <figcaption><b>Master B · jingle cantado</b> — <i>"Raiz, raiz / O tinto que desce devagar / Raiz, raiz /
+        Feito de tempo e silêncio"</i> (92 bpm, Lá menor) sobre o diegético.</figcaption>
+    </figure>
+  </div>
+  <h3>As três variantes do jingle (escolha a sua)</h3>
+  <audio controls src="video/raiz_jingle_v1.flac"></audio>
+  <audio controls src="video/raiz_jingle_v2.flac"></audio>
+  <audio controls src="video/raiz_jingle_v3.flac"></audio>
+
+  <h3>Linha do tempo (3,4 + 3,6 + 4,6 + 4,4 + 4,0 = 20,0 s)</h3>
+  <div class="timeline">
+    <figure><img src="stills/s6_grapes.png" alt=""><figcaption>0–3,4 s · Uvas · Turbo · travada</figcaption></figure>
+    <figure><img src="stills/s6_cellar.png" alt=""><figcaption>3,4–7 s · Adega · Turbo · dolly</figcaption></figure>
+    <figure><img src="stills/s6_pour.png" alt=""><figcaption>7–11,6 s · Hero vertido · Turbo</figcaption></figure>
+    <figure><img src="stills/s6_swirl.png" alt=""><figcaption>11,6–16 s · Lágrimas · Turbo</figcaption></figure>
+    <figure><img src="stills/s6_endcard.png" alt=""><figcaption>16–20 s · End card · MOSS+UltraSharp</figcaption></figure>
+  </div>
+
+  <h3>Stills (MOSS-Image · 1600×900 · QA 9–10/10)</h3>
+  <div class="gallery">
+    <figure><img src="stills/s6_grapes.png" alt=""><figcaption><b>Uvas</b> · 9/10 · seed 6101</figcaption></figure>
+    <figure><img src="stills/s6_pour.png" alt=""><figcaption><b>Vertido</b> (hero) · 9/10 · seed 6202</figcaption></figure>
+    <figure><img src="stills/s6_cellar.png" alt=""><figcaption><b>Adega</b> · 9/10 · seed 6303</figcaption></figure>
+    <figure><img src="stills/s6_swirl.png" alt=""><figcaption><b>Lágrimas</b> — mão <b>10/10</b> · seed 6404</figcaption></figure>
+    <figure><img src="stills/s6_endcard.png" alt=""><figcaption><b>End card</b> — "RAIZ · VINHO TINTO · RESERVA · <i>O tinto que desce devagar.</i>" · seed 6505</figcaption></figure>
+    <figure><img src="stills/s6_endcard_up_00001_.png" alt=""><figcaption><b>End card 4× UltraSharp</b></figcaption></figure>
+  </div>
+</section>
+
+<section id="evolucao">
+  <p class="eyebrow">A jornada</p>
+  <h2>v1 → v6 em números</h2>
+  <table>
+    <tr><th></th><th>v1</th><th>v2</th><th>v3</th><th>v4</th><th>v5</th><th>v6</th></tr>
+    <tr><td>Produto</td><td>Perfume</td><td>Café</td><td>Cerveja</td><td>Mel</td><td>Chocolate</td><td>Vinho</td></tr>
+    <tr><td>Resolução</td><td>480p↑</td><td>mista</td><td>mista</td><td>704p</td><td>1080p</td><td>1080p</td></tr>
+    <tr><td>Fps</td><td>24</td><td>24</td><td>48</td><td>48</td><td>48</td><td>48</td></tr>
+    <tr><td>Áudio</td><td>ambiência</td><td>ambiência</td><td>trilha H3</td><td>+música IA</td><td>+jingle PT</td><td>+<b>locução PT-BR</b> + 3 jingles</td></tr>
+    <tr><td>QA típico</td><td>7/10</td><td>9/10</td><td>9/10</td><td>8–9/10</td><td>9/10</td><td>9–10/10</td></tr>
+  </table>
+  <div class="note ok"><b>O pipeline v6 completo</b>: MOSS (stills com copy exata) → Wan Turbo 1080p
+     (takes 528–540 s) → H3 (diegético) → Ace-Step (música/jingle) → Piper (locução) → UltraSharp + ffmpeg
+     (grade/cortes/fades) → RIFE 48 fps. Tudo local, tudo auditado por VLM, ~55 min de render por comercial.</div>
+</section>
+
+<footer>
+  Engines: MOSS-Image · Wan 2.2 TI2V-5B Turbo (1080p) · MiniMax H3 · Ace-Step 1.5 · <b>Piper TTS</b> · RIFE —
+  produtos fictícios · <a href="../index.html">index</a> · out/2026
+</footer>
+</div>
+</body>
+</html>
