@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MATTA v8 · Oitava iteração — a tese do 14B, julgada na máquina real</title>
+<style>
+:root{--bg:#07090A;--bg2:#0D1014;--card:#10141A;--line:rgba(255,255,255,.09);--text:#EDEFF2;--muted:#9099A8;--blue:#0053FF;--blue-soft:#4D86FF;--green:#17CE73;--amber:#F2B84B;--head:Impact,"Haettenschweiler","Arial Narrow Bold","Arial Narrow",sans-serif;--body:"Segoe UI",system-ui,-apple-system,Roboto,Helvetica,Arial,sans-serif;--mono:"Cascadia Mono",Consolas,Menlo,monospace}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 var(--body);-webkit-font-smoothing:antialiased}
+a{color:var(--blue-soft);text-decoration:none} a:hover{text-decoration:underline}
+.hero{background:linear-gradient(180deg,#12061E 0%,#241040 28%,#3A1A55 55%,#0E0518 84%,var(--bg) 100%);padding:26px 24px 88px;color:#fff}
+.hero-in{max-width:1180px;margin:0 auto}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.chip{border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:5px 13px;font-size:13px;font-weight:600;background:rgba(0,0,0,.32)}
+h1{font:400 clamp(40px,7.5vw,88px)/.98 var(--head);text-transform:uppercase;margin:40px 0 16px;max-width:980px}
+.lead{font-size:clamp(16px,2vw,20px);max-width:820px;color:rgba(255,255,255,.92);margin:0}
+.wrap{max-width:1180px;margin:-52px auto 0;padding:0 24px 80px}
+section{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:26px 28px;margin:0 0 26px}
+.eyebrow{font:400 13px var(--mono);color:var(--amber);letter-spacing:.08em;text-transform:uppercase;margin:0 0 6px}
+h2{font:400 clamp(26px,3.6vw,40px)/1.05 var(--head);text-transform:uppercase;margin:0 0 14px}
+p{margin:0 0 12px}
+.muted{color:var(--muted)}
+.kit{display:grid;grid-template-columns:2fr 1fr 1fr;gap:14px;margin:16px 0}
+.kit figure{margin:0;background:var(--bg2);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.kit video{width:100%;display:block;background:#000}
+figcaption{padding:10px 13px;font-size:13.5px;color:var(--muted);line-height:1.5}
+figcaption b{color:var(--text)}
+table{border-collapse:collapse;width:100%;font-size:14.5px;margin:10px 0}
+th,td{border:1px solid var(--line);padding:8px 12px;text-align:left;vertical-align:top}
+th{background:var(--bg2);font-weight:600;color:var(--muted);text-transform:uppercase;font-size:12px;letter-spacing:.05em}
+.note{border-left:3px solid var(--amber);background:var(--bg2);border-radius:0 12px 12px 0;padding:12px 16px;margin:14px 0;font-size:15px}
+.note.ok{border-color:var(--green)}
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:16px 0}
+.gallery figure{margin:0;background:var(--bg2);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.gallery img{width:100%;display:block;background:#000;aspect-ratio:16/10;object-fit:cover}
+.gallery figure.vert img{aspect-ratio:9/16}
+footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-size:14px;text-align:center}
+@media(max-width:960px){.kit{grid-template-columns:1fr}.gallery{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="hero-in">
+    <h1>Matta · oitava iteração</h1>
+    <p class="lead">A v8 colocou a grande tese em julgamento: <b>o Wan 14B quantizado com destilação
+       Lightning supera o 5B?</b> A comunidade dizia que sim — a nossa RTX 3070 disse <b>não</b> (init de
+       14 min + 850 s/step). O kit seguiu no Turbo consagrado, com o produto mais brasileiro da série:
+       <b>MATTA, açaí de verdade</b> — e o QA de áudio agora fecha o ciclo com <b>transcrição</b>.</p>
+    <div class="chips">
+      <span class="chip">Tese 14B: julgada e arquivada (pesos mantidos)</span><span class="chip">QA de áudio por transcrição (whisper)</span>
+      <span class="chip">Kit 16:9 + 9:16 + jingle · 48 fps · LUFS</span><span class="chip">"AÇAÍ DE VERDADE" com acentos ✓</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+<section id="tese">
+  <p class="eyebrow">A tese da v8, testada a ferro e fogo</p>
+  <h2>14B Lightning: o veredito da máquina</h2>
+  <table>
+    <tr><th></th><th>Wan 2.2 Turbo 5B (GGUF Q5)</th><th>Wan 2.2 A14B + lightx2v 4-step (Q4_K_M)</th></tr>
+    <tr><td>Pesos</td><td>3,6 GB (1 modelo)</td><td>2×9,0 GB (par high/low) + 1,3 GB de LoRAs</td></tr>
+    <tr><td>Init do modelo</td><td>~30 s</td><td><b>14 min por expert</b></td></tr>
+    <tr><td>Tempo por step</td><td>~14 s</td><td><b>850 s</b></td></tr>
+    <tr><td>Take 5 s (121f)</td><td><b>9 min</b></td><td>projeção ~90 min — <b>abortado após 2 h sem completar</b></td></tr>
+    <tr><td>Veredito</td><td><b>Produção</b></td><td>Inviável nesta GPU (relatos da comunidade eram de placas 12–24 GB)</td></tr>
+  </table>
+  <div class="note"><b>O que fica:</b> os 21 GB de pesos 14B seguem instalados — quando a máquina
+     crescer (ou um Q3/quant futuro destravar), o workflow <code>wan14_lightning_api.json</code> está
+     pronto e validado (grafo high/low + LoRAs + VAE 2.1). A pesquisa da v8 também mapeou o teto real:
+     <b>na 8 GB, o 5B Turbo é o ponto ótimo qualidade/tempo para vídeo</b>.</div>
+</section>
+
+<section id="qa-audio">
+  <p class="eyebrow">O outro achado da v8</p>
+  <h2>QA de áudio por transcrição (whisper)</h2>
+  <p>faster-whisper <code>small/int8</code> na CPU entrou no ciclo de QA:</p>
+  <table>
+    <tr><th>Caso</th><th>Resultado</th></tr>
+    <tr><td>Locução Piper (fala)</td><td>✓ Transcreve — <b>"A força da mata na tigela."</b> saiu perfeita inclusive no master final mixado. O brand "Matta" sai mushy na voz faber → solução: marca fica no jingle + end card, locução só com a frase perfeita.</td></tr>
+    <tr><td>Jingle cantado</td><td>✗ O modelo small não separa letra de música — QA de canto continua sendo ouvido humano (vocês!).</td></tr>
+  </table>
+</section>
+
+<section id="kit">
+  <p class="eyebrow">O produto novo · 20 s · 1080p · 48 fps</p>
+  <h2>MATTA — açaí de verdade</h2>
+  <div class="kit">
+    <figure>
+      <video src="video/matta_h_48.mp4" controls playsinline></video>
+      <figcaption><b>Master 16:9</b> — afro-samba (berimbau-like + nylon guitar, 90 bpm) + diegético H3 +
+        locução verificada por transcrição: <i>"A força da mata na tigela."</i></figcaption>
+    </figure>
+    <figure>
+      <video src="video/matta_v_48.mp4" controls playsinline></video>
+      <figcaption><b>Master 9:16</b> — vertical nativa, pronta para reels.</figcaption>
+    </figure>
+    <figure>
+      <video src="video/matta_h_jingle_48.mp4" controls playsinline></video>
+      <figcaption><b>Master jingle</b> — <i>"Matta, matta / Açaí de verdade / A força da mata na tigela"</i> (100 bpm, Mi menor).</figcaption>
+    </figure>
+  </div>
+
+  <div class="gallery">
+    <figure><img src="stills/s8_berries.png" alt=""><figcaption><b>Basket de açaí</b> · QA 9–10</figcaption></figure>
+    <figure><img src="stills/s8_pour.png" alt=""><figcaption><b>Vertido</b> (hero) · cor 10/10</figcaption></figure>
+    <figure><img src="stills/s8_bowl.png" alt=""><figcaption><b>Tigela</b></figcaption></figure>
+    <figure><img src="stills/s8_spoon.png" alt=""><figcaption><b>Colher</b></figcaption></figure>
+    <figure class="vert"><img src="stills/s8_berries_v.png" alt=""><figcaption>vertical</figcaption></figure>
+    <figure class="vert"><img src="stills/s8_pour_v.png" alt=""><figcaption>vertical</figcaption></figure>
+    <figure class="vert"><img src="stills/s8_bowl_v.png" alt=""><figcaption>vertical</figcaption></figure>
+    <figure class="vert"><img src="stills/s8_endcard_v.png" alt=""><figcaption><b>end card</b> vertical</figcaption></figure>
+  </div>
+</section>
+
+<section id="evolucao">
+  <p class="eyebrow">A jornada</p>
+  <h2>v1 → v8</h2>
+  <table>
+    <tr><th></th><th>v1</th><th>v2</th><th>v3</th><th>v4</th><th>v5</th><th>v6</th><th>v7</th><th>v8</th></tr>
+    <tr><td>Produto</td><td>Perfume</td><td>Café</td><td>Cerveja</td><td>Mel</td><td>Chocolate</td><td>Vinho</td><td>Cachaça</td><td>Açaí</td></tr>
+    <tr><td>Vídeo</td><td>480p</td><td>misto</td><td>misto</td><td>704p</td><td>1080p</td><td>1080p</td><td>1080p h+v</td><td>1080p h+v (+14B julgado)</td></tr>
+    <tr><td>QA</td><td>olho</td><td>VLM</td><td>VLM+</td><td>VLM+</td><td>VLM+</td><td>VLM+</td><td>VLM+</td><td>VLM + <b>transcrição de áudio</b></td></tr>
+  </table>
+  <div class="note ok"><b>Estado final do pipeline local:</b> MOSS (stills PT perfeitos) → Wan Turbo 1080p
+     (h+v, 9 min/take) → H3 (diegético) → Ace-Step (música/jingle) → Piper (locução auditável) →
+     whisper (transcrição-QA) → UltraSharp/ffmpeg/LUFS → RIFE 48. Kit completo em ~1h40 de máquina.</div>
+</section>
+
+<footer>
+  Engines: MOSS-Image · Wan 2.2 Turbo 5B (o 14B foi julgado e arquivado) · MiniMax H3 · Ace-Step 1.5 ·
+  Piper · faster-whisper · RIFE — produtos fictícios · <a href="../index.html">index</a> · out/2026
+</footer>
+</div>
+</body>
+</html>

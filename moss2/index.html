@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SERRA v2 · Comercial refeito — MOSS-Image + Wan/H3</title>
+<style>
+:root{
+  --bg:#07090A; --bg2:#0D1014; --card:#10141A; --line:rgba(255,255,255,.09);
+  --text:#EDEFF2; --muted:#9099A8; --blue:#0053FF; --blue-soft:#4D86FF; --green:#17CE73; --amber:#F2B84B;
+  --head:Impact,"Haettenschweiler","Arial Narrow Bold","Arial Narrow",sans-serif;
+  --body:"Segoe UI",system-ui,-apple-system,Roboto,Helvetica,Arial,sans-serif;
+  --mono:"Cascadia Mono",Consolas,Menlo,monospace;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 var(--body);-webkit-font-smoothing:antialiased}
+a{color:var(--blue-soft);text-decoration:none} a:hover{text-decoration:underline}
+.hero{background:linear-gradient(180deg,#3B1F0A 0%,#5C3110 30%,#2E1A4E 62%,#101733 84%,var(--bg) 100%);padding:26px 24px 88px;color:#fff}
+.hero-in{max-width:1180px;margin:0 auto}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.chip{border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:5px 13px;font-size:13px;font-weight:600;background:rgba(0,0,0,.22)}
+h1{font:400 clamp(40px,7.5vw,88px)/.98 var(--head);text-transform:uppercase;margin:40px 0 16px;max-width:980px}
+.lead{font-size:clamp(16px,2vw,20px);max-width:780px;color:rgba(255,255,255,.92);margin:0}
+.wrap{max-width:1180px;margin:-52px auto 0;padding:0 24px 80px}
+section{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:26px 28px;margin:0 0 26px}
+.eyebrow{font:400 13px var(--mono);color:var(--amber);letter-spacing:.08em;text-transform:uppercase;margin:0 0 6px}
+h2{font:400 clamp(26px,3.6vw,40px)/1.05 var(--head);text-transform:uppercase;margin:0 0 14px}
+h3{font-size:17px;margin:24px 0 8px}
+p{margin:0 0 12px}
+.muted{color:var(--muted)}
+.player{background:#000;border-radius:12px;border:1px solid var(--line);overflow:hidden}
+.player video{width:100%;display:block}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:16px 0}
+.gallery figure{margin:0;background:var(--bg2);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.gallery img{width:100%;display:block;background:#000}
+figcaption{padding:10px 13px;font-size:13.5px;color:var(--muted);line-height:1.5}
+figcaption b{color:var(--text)}
+.ab{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:16px 0}
+.ab figure{margin:0;background:var(--bg2);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.ab video{width:100%;display:block;aspect-ratio:16/9;background:#000}
+.timeline{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin:14px 0}
+.timeline figure{margin:0}
+.timeline img{width:100%;border-radius:10px;border:1px solid var(--line);display:block}
+.timeline figcaption{font:600 12px var(--body);color:var(--muted);padding:6px 2px;text-align:center}
+.meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin:14px 0}
+.meta div{background:var(--bg2);border:1px solid var(--line);border-radius:10px;padding:10px 14px;font-size:14px}
+.meta b{display:block;font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:600}
+table{border-collapse:collapse;width:100%;font-size:14.5px;margin:10px 0}
+th,td{border:1px solid var(--line);padding:8px 12px;text-align:left;vertical-align:top}
+th{background:var(--bg2);font-weight:600;color:var(--muted);text-transform:uppercase;font-size:12px;letter-spacing:.05em}
+.note{border-left:3px solid var(--amber);background:var(--bg2);border-radius:0 12px 12px 0;padding:12px 16px;margin:14px 0;font-size:15px}
+.note.ok{border-color:var(--green)}
+details{background:var(--bg2);border:1px solid var(--line);border-radius:12px;margin:10px 0;padding:0 16px}
+summary{cursor:pointer;padding:13px 0;font-weight:600}
+footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-size:14px;text-align:center}
+@media(max-width:860px){.ab{grid-template-columns:1fr}.gallery{grid-template-columns:1fr 1fr}.timeline{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:560px){.gallery{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="hero-in">
+    <h1>Serra · o comercial refeito</h1>
+    <p class="lead">O que incomodava no v1 virou diagnóstico: <b>steps errados na LoRA turbo</b>, 480p esticado,
+       zoom rígido e órbita em produto com texto. Reavaliação completa, matriz A/B de engines com QA por visão
+       e um novo comercial — <b>SERRA, café de altitude</b> — em 720p, 20&nbsp;s, cortes limpos.</p>
+    <div class="chips">
+      <span class="chip">MOSS-Image 5B · stills 1600×900</span><span class="chip">Wan 2.2 TI2V-5B · hero 704p</span>
+      <span class="chip">MiniMax H3 @ 8 steps · 3 shots + áudio</span><span class="chip">UltraSharp 4× no end card</span>
+      <span class="chip">QA visual por VLM local (Qwen 9B)</span><span class="chip">RTX 3070 · 8 GB</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+<!-- ============ DIAGNÓSTICO ============ -->
+<section id="diagnostico">
+  <p class="eyebrow">Pesquisa + reavaliação</p>
+  <h2>O que estava errado no v1 — e o que mudou</h2>
+  <table>
+    <tr><th>Problema no v1</th><th>Causa raiz</th><th>Correção no v2</th></tr>
+    <tr><td>Qualidade "mole" do vídeo</td><td><b>LoRA turbo 8-step rodada a 4 steps</b> (undercooked — QA dá 7/10 com banding e oversharpening)</td><td><b>8 steps</b> corretos (QA 9/10, zero artefatos)</td></tr>
+    <tr><td>Falta de nitidez final</td><td>832×480 esticado p/ 720p + xfade esfumaçando tudo</td><td>Hero shot em <b>Wan 2.2 a 1280×704 nativo</b>; H3 a 8 steps com unsharp + grain; cortes secos</td></tr>
+    <tr><td>Movimento artificial</td><td>Órbita de câmera em produto com texto (warp) e pushes longos</td><td><b>Câmera travada</b>, o movimento vem do sujeito (café caindo, vapor, crema); takes curtos</td></tr>
+    <tr><td>End card com zoom trêmulo</td><td>zoompan de 1344px de fonte</td><td>End card MOSS <b>upscalado 4× (UltraSharp)</b> → zoom suave de 2560px p/ 720p</td></tr>
+    <tr><td>QA olho-nu apenas</td><td>—</td><td><b>Auditoria por VLM local</b> (Qwen3.5-9B via TextGenerate): nota + artefatos + transcrição por frame</td></tr>
+  </table>
+  <p class="muted">Engines avaliadas na reavaliação: Wan 2.7 (licença conflitante — fora), LTX-2.5 (22B, licença
+     community com teto de US$10M — fora p/ cliente), <b>Wan 2.2 TI2V-5B</b> (Apache-2.0 ✓), <b>MiniMax H3</b> (corrigido).
+     As 2.6/2.7 do template do ComfyUI são apenas API em nuvem.</p>
+</section>
+
+<!-- ============ MATRIZ A/B ============ -->
+<section id="ab">
+  <p class="eyebrow">Matriz A/B · mesmo shot hero (espresso pour), mesma seed de movimento</p>
+  <h2>4 steps vs 8 steps vs Wan 2.2</h2>
+  <div class="ab">
+    <figure>
+      <video src="video/ab_h3_4st.mp4" controls loop muted playsinline></video>
+      <figcaption><b>H3 @ 4 steps</b> — 832×480 · 132 s · <b>QA 7/10</b>: banding no vapor, oversharpening. Era a receita do v1.</figcaption>
+    </figure>
+    <figure>
+      <video src="video/ab_h3_8st.mp4" controls loop muted playsinline></video>
+      <figcaption><b>H3 @ 8 steps</b> — 832×480 · 198 s · <b>QA 9/10</b>: zero artefatos. Custo +50% de tempo.</figcaption>
+    </figure>
+    <figure>
+      <video src="video/ab_wan20.mp4" controls loop muted playsinline></video>
+      <figcaption><b>Wan 2.2 TI2V-5B</b> — 1280×704 nativo · 20 steps · 54 min (offload na 8 GB) · <b>QA 9/10</b>: detalhe máximo.</figcaption>
+    </figure>
+  </div>
+  <div class="note ok"><b>Decisão — híbrido:</b> Wan é o mais bonito mas custa 16× o tempo do H3 por take na
+     placa de 8 GB. Então o <b>shot hero</b> (pour) usa Wan 704p nativo — que já dá o "wow" — e os outros três
+     shots usam H3 a 8 steps (198–210 s cada), com a <b>trilha ambiente do H3</b> doando áudio inclusive pro
+     take Wan (mesmo shot, mesmo prompt). Resolução total do spot: 720p real no hero, upscale fino no resto.</div>
+</section>
+
+<!-- ============ COMERCIAL ============ -->
+<section id="comercial">
+  <p class="eyebrow">O novo produto · 20 s · 1280×720</p>
+  <h2>SERRA — café de altitude</h2>
+  <div class="player"><video src="video/serra_commercial.mp4" controls playsinline></video></div>
+  <p class="muted" style="margin-top:8px">5 planos · cortes secos · grade quente (eq+unsharp+grain 2.5) ·
+     áudio ambiente gerado pelo H3 (pássaros, grãos, máquina, xícara) com micro-crossfades · fade in/out</p>
+
+  <h3>Linha do tempo</h3>
+  <div class="timeline">
+    <figure><img src="stills/s2_cherry.png" alt=""><figcaption>0–4,1 s · Cerejas · H3@8st</figcaption></figure>
+    <figure><img src="stills/s2_beans.png" alt=""><figcaption>4,1–8,2 s · Grãos · H3@8st</figcaption></figure>
+    <figure><img src="stills/s2_pour.png" alt=""><figcaption>8,2–12,8 s · Hero pour · <b>Wan 704p</b></figcaption></figure>
+    <figure><img src="stills/s2_cup.png" alt=""><figcaption>12,8–16 s · Xícara · H3@8st</figcaption></figure>
+    <figure><img src="stills/s2_endcard.png" alt=""><figcaption>16–20 s · End card · MOSS+UltraSharp</figcaption></figure>
+  </div>
+
+  <h3>Stills (MOSS-Image SFT · 1600×900 · 45–55 s cada)</h3>
+  <div class="gallery">
+    <figure><img src="stills/s2_cherry.png" alt=""><figcaption><b>Cerejas</b> — orvalho + névoa de altitude · seed 2101 · QA 9.5/10</figcaption></figure>
+    <figure><img src="stills/s2_beans.png" alt=""><figcaption><b>Grãos</b> — queda congelada, luz de janela · seed 2202</figcaption></figure>
+    <figure><img src="stills/s2_pour.png" alt=""><figcaption><b>Pour (frame do hero)</b> — crema/vapor · seed 2303 · QA 9/10</figcaption></figure>
+    <figure><img src="stills/s2_cup.png" alt=""><figcaption><b>Xícara</b> — mãos em tricô, VLM: 5+5 dedos ✓ · seed 2404 · QA 9/10</figcaption></figure>
+    <figure><img src="stills/s2_endcard.png" alt=""><figcaption><b>End card</b> — layout JSON: "SERRA · CAFÉ DE ALTITUDE · 1.400 M · <i>O sabor de quem colhe cedo.</i>" acentos perfeitos · seed 2505</figcaption></figure>
+    <figure><img src="stills/s2_endcard_up_00001_.png" alt=""><figcaption><b>End card 4× UltraSharp</b> → 2560×1440, fonte do zoom final (708 s, fila)</figcaption></figure>
+  </div>
+
+  <details><summary>Receita dos takes (prompts de vídeo)</summary>
+<pre>cherry: "Static macro... gentle breeze... dawn light slowly brightening... Camera: locked tripod"
+beans:  "beans cascade... natural physics... bowl stays sharp... Camera: locked tripod close-up"
+pour:   "espresso pours... crema swirls... Camera: locked tripod macro, no camera movement"
+cup:    "fingers shift gently around the warm cup... Camera: locked tripod medium shot"
+→ Regra v2: câmera PARADA; o movimento é do sujeito. Nada de órbita em produto.</pre>
+  </details>
+</section>
+
+<!-- ============ V1 vs V2 ============ -->
+<section id="benchmarks">
+  <p class="eyebrow">Números · v1 → v2</p>
+  <h2>Benchmarks e veredito do QA</h2>
+  <table>
+    <tr><th>Métrica</th><th>v1 (MOSS perfume)</th><th>v2 (SERRA café)</th></tr>
+    <tr><td>Steps do I2V</td><td>4 (errado p/ LoRA 8-step)</td><td>8 (H3) / 20 (Wan)</td></tr>
+    <tr><td>Resolução do take</td><td>832×480</td><td>1280×704 (hero) + 832×480@8st</td></tr>
+    <tr><td>QA VLM do take</td><td>7/10 (banding)</td><td>9–9,5/10 (zero artefatos)</td></tr>
+    <tr><td>Movimento</td><td>órbita/zoom contínuos</td><td>câmera travada, 5 planos</td></tr>
+    <tr><td>End card</td><td>zoompan 1344px (tremido)</td><td>zoom 2560px pós-UltraSharp</td></tr>
+    <tr><td>Tempo de render dos takes</td><td>~9 min (2×)</td><td>~58 min (3×H3@8st + 1×Wan)</td></tr>
+    <tr><td>Stills (MOSS)</td><td>6 × 30–40 s @ 1 MP</td><td>5 × 45–55 s @ 1,44 MP</td></tr>
+  </table>
+  <div class="note"><b>Trade-off honesto:</b> o salto de qualidade custou ~6× o tempo de render dos takes.
+     O pipeline v2 fica pronto para cliente com H3@8st puro (~13 min de takes p/ 20 s de spot); o Wan no hero
+     é o "cherry on top" quando o prazo permite 54 min por take.</div>
+</section>
+
+<footer>
+  Engines: MOSS-Image (Apache-2.0) · Wan 2.2 TI2V-5B (Apache-2.0) · MiniMax H3 (pesos abertos; produto fictício p/ teste) ·
+  QA: Qwen3.5-9B (TextGenerate) local · <a href="../moss/index.html">← projeto v1 (MOSS perfume)</a> ·
+  <a href="../index.html">index do workspace</a> · out/2026
+</footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AMARGO v5 · Quinta iteração — 1080p nativo + texto em movimento + jingle</title>
+<style>
+:root{
+  --bg:#07090A; --bg2:#0D1014; --card:#10141A; --line:rgba(255,255,255,.09);
+  --text:#EDEFF2; --muted:#9099A8; --blue:#0053FF; --blue-soft:#4D86FF; --green:#17CE73; --amber:#F2B84B;
+  --head:Impact,"Haettenschweiler","Arial Narrow Bold","Arial Narrow",sans-serif;
+  --body:"Segoe UI",system-ui,-apple-system,Roboto,Helvetica,Arial,sans-serif;
+  --mono:"Cascadia Mono",Consolas,Menlo,monospace;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 var(--body);-webkit-font-smoothing:antialiased}
+a{color:var(--blue-soft);text-decoration:none} a:hover{text-decoration:underline}
+.hero{background:linear-gradient(180deg,#1A0E06 0%,#2E1708 28%,#4A2A10 55%,#160B04 84%,var(--bg) 100%);padding:26px 24px 88px;color:#fff}
+.hero-in{max-width:1180px;margin:0 auto}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.chip{border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:5px 13px;font-size:13px;font-weight:600;background:rgba(0,0,0,.28)}
+h1{font:400 clamp(40px,7.5vw,88px)/.98 var(--head);text-transform:uppercase;margin:40px 0 16px;max-width:980px}
+.lead{font-size:clamp(16px,2vw,20px);max-width:820px;color:rgba(255,255,255,.92);margin:0}
+.wrap{max-width:1180px;margin:-52px auto 0;padding:0 24px 80px}
+section{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:26px 28px;margin:0 0 26px}
+.eyebrow{font:400 13px var(--mono);color:var(--amber);letter-spacing:.08em;text-transform:uppercase;margin:0 0 6px}
+h2{font:400 clamp(26px,3.6vw,40px)/1.05 var(--head);text-transform:uppercase;margin:0 0 14px}
+h3{font-size:17px;margin:24px 0 8px}
+p{margin:0 0 12px}
+.muted{color:var(--muted)}
+.player{background:#000;border-radius:12px;border:1px solid var(--line);overflow:hidden}
+.player video{width:100%;display:block}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:16px 0}
+.gallery figure{margin:0;background:var(--bg2);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.gallery img{width:100%;display:block;background:#000}
+figcaption{padding:10px 13px;font-size:13.5px;color:var(--muted);line-height:1.5}
+figcaption b{color:var(--text)}
+.timeline{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin:14px 0}
+.timeline figure{margin:0}
+.timeline img{width:100%;border-radius:10px;border:1px solid var(--line);display:block}
+.timeline figcaption{font:600 12px var(--body);color:var(--muted);padding:6px 2px;text-align:center}
+table{border-collapse:collapse;width:100%;font-size:14.5px;margin:10px 0}
+th,td{border:1px solid var(--line);padding:8px 12px;text-align:left;vertical-align:top}
+th{background:var(--bg2);font-weight:600;color:var(--muted);text-transform:uppercase;font-size:12px;letter-spacing:.05em}
+.note{border-left:3px solid var(--amber);background:var(--bg2);border-radius:0 12px 12px 0;padding:12px 16px;margin:14px 0;font-size:15px}
+.note.ok{border-color:var(--green)}
+details{background:var(--bg2);border:1px solid var(--line);border-radius:12px;margin:10px 0;padding:0 16px}
+summary{cursor:pointer;padding:13px 0;font-weight:600}
+.evo{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin:16px 0}
+.evo figure{margin:0;background:var(--bg2);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.evo video{width:100%;display:block;aspect-ratio:16/9;background:#000}
+.sbs2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:16px 0}
+.sbs2 figure{margin:0;background:var(--bg2);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.sbs2 video{width:100%;display:block;background:#000}
+footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-size:14px;text-align:center}
+@media(max-width:960px){.evo{grid-template-columns:1fr 1fr}.sbs2{grid-template-columns:1fr}}
+@media(max-width:560px){.evo,.gallery{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="hero-in">
+    <h1>Amargo · quinta iteração</h1>
+    <p class="lead">As duas reservas da v4 viraram teste controlado e <b>passaram</b>: o Wan 5B aguenta
+       <b>1080p nativo</b> sem artefatos (10/10 no QA, contra o aviso da literatura) e <b>texto gravado
+       sobrabre dolly</b> fica estável. Com o jingle cantado em português do Ace-Step de bônus.
+       Produto novo: <b>AMARGO, chocolate 70% cacau</b> — o primeiro comercial do projeto em
+       <b>Full HD nativo</b>.</p>
+    <div class="chips">
+      <span class="chip">1920×1088 nativo · todos os takes</span><span class="chip">Rótulo embossado sob dolly ✓</span>
+      <span class="chip">Jingle PT-BR cantado (Ace-Step)</span><span class="chip">48 fps · RIFE</span>
+      <span class="chip">QA VLM por take</span><span class="chip">RTX 3070 · 8 GB</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+<!-- ============ TESTES ============ -->
+<section id="testes">
+  <p class="eyebrow">Testes controlados antes do produto</p>
+  <h2>As duas teses da v4, confirmadas</h2>
+  <table>
+    <tr><th>Teste</th><th>Aposta</th><th>Resultado</th></tr>
+    <tr><td><b>T1 · 1080p nativo</b> (Turbo a 1920×1088, 576 s)</td>
+        <td>Literatura diz que o 5B é treinado p/ 720p e deforma acima disso</td>
+        <td><b>10/10, zero artefatos</b> — o VLM jurou que "parece fotografia, não IA esticada". Produto estático + câmera travada segura o OOD. → <b>master do v5 em 1080p</b></td></tr>
+    <tr><td><b>T2 · rótulo sob dolly</b> (Turbo 704p, 205 s)</td>
+        <td>Texto impresso em movimento sofre warp</td>
+        <td><b>10/10 estável</b> — "GAROA" nítido do início ao fim do dolly → <b>plano da barra AMARGO embossada com dolly-in no comercial</b></td></tr>
+    <tr><td><b>T3 · jingle cantado PT</b> (Ace-Step 1.5, lyrics em português)</td>
+        <td>Vocais IA em PT podem sair toscos</td>
+        <td>Entregue como <b>trilha alternativa</b> (master B) — o master A segue instrumental (receita validada); ouça os dois</td></tr>
+  </table>
+  <div class="note ok"><b>Leitura estratégica:</b> o pipeline agora permite <i>testar antes de comprometer</i>
+     — cada tese custou 3–10 min de GPU. É o ciclo de pesquisa → teste controlado → produto que as
+     quatro versões construíram.</div>
+</section>
+
+<!-- ============ COMERCIAL ============ -->
+<section id="comercial">
+  <p class="eyebrow">O produto novo · 20 s · 1920×1080 · 48 fps · duas trilhas</p>
+  <h2>AMARGO — chocolate 70% cacau</h2>
+  <div class="sbs2">
+    <figure>
+      <video src="video/amargo_commercial_theme_48.mp4" controls playsinline></video>
+      <figcaption><b>Master A · instrumental</b> — tema Ace-Step (violão + violoncelo, samba lento 82 bpm)
+        sobre o diegético do H3. A receita validada.</figcaption>
+    </figure>
+    <figure>
+      <video src="video/amargo_commercial_jingle_48.mp4" controls playsinline></video>
+      <figcaption><b>Master B · jingle cantado (PT-BR)</b> — Ace-Step com lyrics:
+        <i>"Amargo, amargo / Setenta por cento de cacau / O lado selvagem do doce"</i> (96 bpm, D menor).
+        O experimento da v5.</figcaption>
+    </figure>
+  </div>
+
+  <h3>Linha do tempo (4,0 + 4,2 + 4,6 + 3,4 + 3,8 = 20,0 s)</h3>
+  <div class="timeline">
+    <figure><img src="stills/s5_beans.png" alt=""><figcaption>0–4 s · Cacau · Turbo 1080p · travada</figcaption></figure>
+    <figure><img src="stills/s5_bar.png" alt=""><figcaption>4–8,2 s · Barra embossada · Turbo · <b>dolly + texto</b></figcaption></figure>
+    <figure><img src="stills/s5_pour.png" alt=""><figcaption>8,2–12,8 s · Hero derretido · Turbo 1080p</figcaption></figure>
+    <figure><img src="stills/s5_truffle.png" alt=""><figcaption>12,8–16,2 s · Trufas · Turbo · dolly</figcaption></figure>
+    <figure><img src="stills/s5_endcard.png" alt=""><figcaption>16,2–20 s · End card · MOSS+UltraSharp</figcaption></figure>
+  </div>
+
+  <h3>Stills (MOSS-Image SFT · 1600×900 · QA aprovado)</h3>
+  <div class="gallery">
+    <figure><img src="stills/s5_beans.png" alt=""><figcaption><b>Cacau</b> — textura 10/10 · seed 5101</figcaption></figure>
+    <figure><img src="stills/s5_pour.png" alt=""><figcaption><b>Chocolate derretido</b> (frame do hero) · QA 9/10 · seed 5202</figcaption></figure>
+    <figure><img src="stills/s5_bar.png" alt=""><figcaption><b>Barra</b> — embossado "AMARGO / 70% CACAU" · QA <b>10/10</b> · seed 5303</figcaption></figure>
+    <figure><img src="stills/s5_truffle.png" alt=""><figcaption><b>Trufas</b> — ganache + pó de cacau · QA 9/10 · seed 5404</figcaption></figure>
+    <figure><img src="stills/s5_endcard.png" alt=""><figcaption><b>End card</b> — "AMARGO · CHOCOLATE 70% CACAU · <i>O lado selvagem do doce.</i>" · seed 5505</figcaption></figure>
+    <figure><img src="stills/s5_endcard_up_00001_.png" alt=""><figcaption><b>End card 4× UltraSharp</b> (2560×1440, fonte do zoom)</figcaption></figure>
+  </div>
+</section>
+
+<!-- ============ EVOLUÇÃO ============ -->
+<section id="evolucao">
+  <p class="eyebrow">A jornada</p>
+  <h2>v1 → v2 → v3 → v4 → v5</h2>
+  <div class="evo">
+    <figure><video src="../moss/video/moss_commercial.mp4" controls muted playsinline></video>
+      <figcaption><b>v1 · perfume</b> 480p · <a href="../moss/index.html">página</a></figcaption></figure>
+    <figure><video src="../moss2/video/serra_commercial.mp4" controls muted playsinline></video>
+      <figcaption><b>v2 · café</b> steps corrigidos · <a href="../moss2/index.html">página</a></figcaption></figure>
+    <figure><video src="../moss3/video/garoa_commercial_48.mp4" controls muted playsinline></video>
+      <figcaption><b>v3 · cerveja</b> 48 fps · <a href="../moss3/index.html">página</a></figcaption></figure>
+    <figure><video src="../moss4/video/ambar_commercial_48.mp4" controls muted playsinline></video>
+      <figcaption><b>v4 · mel</b> 704p total + música · <a href="../moss4/index.html">página</a></figcaption></figure>
+    <figure><video src="video/amargo_commercial_theme_48.mp4" controls muted playsinline></video>
+      <figcaption><b>v5 · chocolate</b> 1080p + jingle · esta página</figcaption></figure>
+  </div>
+  <table>
+    <tr><th></th><th>v1</th><th>v2</th><th>v3</th><th>v4</th><th>v5</th></tr>
+    <tr><td>Produto</td><td>Perfume</td><td>Café</td><td>Cerveja</td><td>Mel</td><td>Chocolate</td></tr>
+    <tr><td>Resolução</td><td>480p→720p</td><td>mista</td><td>mista</td><td>704p nativo</td><td><b>1080p nativo</b></td></tr>
+    <tr><td>Texto em vídeo</td><td>só end card</td><td>rótulo travado</td><td>rótulo travado</td><td>rótulo travado</td><td><b>embossado sob dolly ✓</b></td></tr>
+    <tr><td>Áudio</td><td>ambiência</td><td>ambiência</td><td>trilha dirigida</td><td>música IA + diegético</td><td>+ <b>jingle PT cantado</b> (alt.)</td></tr>
+    <tr><td>Render dos takes</td><td>~9 min</td><td>~58 min</td><td>~78 min</td><td>~21 min</td><td><b>~37 min</b> (4× Turbo 1080p: 522–630 s) + ~11 min áudio</td></tr>
+  </table>
+  <div class="note"><b>Reservas v6:</b> takes longos (10 s+ contínuos) agora que decode/resolução estão
+     resolvidos; VAE tuning fino a 1080p; jingle refinado com seeds/lyrics alternativos e um teste de
+     "logo card" com layout JSON animável (MOSS + dolly).</div>
+</section>
+
+<footer>
+  Engines: MOSS-Image · Wan 2.2 TI2V-5B (fp16 + Turbo GGUF, 1080p) · MiniMax H3 (áudio) ·
+  Ace-Step 1.5 turbo (instrumental + jingle PT) · RIFE v4.26 — produtos fictícios ·
+  <a href="../index.html">index</a> · out/2026
+</footer>
+</div>
+</body>
+</html>
