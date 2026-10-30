@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>v25 · Root + Bridge — sem corte, sem deriva</title>
+<style>
+:root{--bg:#07090A;--bg2:#0D1014;--card:#10141A;--line:rgba(255,255,255,.09);--text:#EDEFF2;--muted:#9099A8;--amber:#F2B84B;--green:#17CE73;--head:Impact,sans-serif;--body:"Segoe UI",system-ui,sans-serif}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 var(--body)}
+a{color:#4D86FF;text-decoration:none}a:hover{text-decoration:underline}
+.hero{background:linear-gradient(180deg,#04100C,#0A2018 30%,#123524 55%,#040C08 85%,var(--bg));padding:26px 24px 88px;color:#fff}
+.hero-in{max-width:1180px;margin:0 auto}.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.chip{border:1px solid rgba(255,255,255,.4);border-radius:999px;padding:5px 13px;font-size:13px;font-weight:600;background:rgba(0,0,0,.3)}
+h1{font:400 clamp(40px,7.5vw,88px)/.98 var(--head);text-transform:uppercase;margin:40px 0 16px;max-width:980px}
+.lead{font-size:clamp(16px,2vw,20px);max-width:860px;color:rgba(255,255,255,.94);margin:0}
+.wrap{max-width:1180px;margin:-52px auto 0;padding:0 24px 80px}
+section{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:26px 28px;margin:0 0 26px}
+.eyebrow{font:400 13px monospace;color:var(--amber);letter-spacing:.08em;text-transform:uppercase;margin:0 0 6px}
+h2{font:400 clamp(26px,3.6vw,40px)/1.05 var(--head);text-transform:uppercase;margin:0 0 14px}
+.note{border-left:3px solid var(--amber);background:var(--bg2);border-radius:0 12px 12px 0;padding:12px 16px;margin:14px 0;font-size:15px}
+.note.ok{border-color:var(--green)}
+.reel{max-width:420px;margin:18px auto}
+.reel figure{margin:0;background:var(--bg2);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.reel video{width:100%;display:block;aspect-ratio:9/16;background:#000}
+figcaption{padding:12px 14px;font-size:14px;color:var(--muted);line-height:1.55}figcaption b{color:var(--text)}
+.timeline{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:16px 0}
+.tl{border:1px solid var(--line);border-radius:10px;padding:10px 12px;font-size:13px;background:var(--bg2)}
+.tl b{display:block;font-size:14px}.tl.root{border-color:rgba(23,206,115,.55)}.tl.bridge{border-color:rgba(242,184,75,.55)}
+code{background:var(--bg2);border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-size:13px}
+.gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:16px auto;max-width:500px}
+.gallery figure{margin:0;background:var(--bg2);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.gallery img{width:100%;display:block;background:#000;aspect-ratio:9/16;object-fit:cover}
+footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-size:14px;text-align:center}
+@media(max-width:760px){.timeline{grid-template-columns:1fr 1fr}}
+</style></head><body>
+<header class="hero"><div class="hero-in">
+<h1>Root + Bridge</h1>
+<p class="lead">A técnica dos vídeos "sem degradação" do YouTube, re implementada local:
+<b>raízes frescas + pontes de motion context latent dos dois lados</b>. A Bia conta a mesma
+história do date da v24 — agora num take contínuo de ~30s <b>sem corte visível</b>, com o
+áudio e o lip sync nativos do H3 em cada segmento e emendas by latent (nada passa por pixels).</p>
+<div class="chips">
+<span class="chip">3 raízes · mesma seed + mesma duração + mesma ref</span>
+<span class="chip">2 pontes · 39f pinados de cada lado</span>
+<span class="chip">Emenda latent-grade (OBVPM MCtx)</span>
+<span class="chip">Smart-cut assembly</span>
+</div></div></header>
+<div class="wrap">
+
+<section id="reel">
+<p class="eyebrow">Entregável · 33,5s contínuos · 576×1024</p>
+<h2>O take único</h2>
+<div class="reel">
+<figure><video src="video/story_bia.mp4" controls playsinline></video>
+<figcaption><b>Bia — "O date que deu errado" (take contínuo)</b>: r1 → ponte → r2 → ponte → r3.
+As emendas caem entre frases; a câmera, o rosto e o fundo continuam pelos latents pinados.</figcaption></figure>
+</div>
+<div class="timeline">
+<div class="tl root"><b>r1 · raiz</b>seed 1353 · 158f<br>"Gente, preciso contar o date de ontem…"</div>
+<div class="tl bridge"><b>b1 · ponte</b>39f+r1 · 39f→r2<br>"…o vinho mais caro da carta… rachar 50-50?"</div>
+<div class="tl root"><b>r2 · raiz</b>seed 1353 · 158f<br>"O vinho era dele… paguei sozinha."</div>
+<div class="tl bridge"><b>b2 · ponte</b>39f+r2 · 39f→r3<br>"…doggy bag do MEU prato."</div>
+<div class="tl root"><b>r3 · raiz</b>seed 1353 · 158f<br>"Solo fêmea pra sempre."</div>
+</div>
+<p class="note">Por que não degrada: uma cadeia de extensões reinterpreta o latent anterior a
+cada take e a deriva acumula (cores deslocam, rosto escurece). No padrão raiz+ponte, todo
+take ímpar é uma geração fresca — a deriva nunca atravessa mais de uma ponte. E como as
+raízes compartilham seed, duração e imagem-referência, o ruído inicial é o mesmo e os fundos
+al inham sozinhos.</p>
+</section>
+
+<section id="how">
+<p class="eyebrow">Pipeline</p>
+<h2>Como foi feito</h2>
+<p>1) <b>Raízes</b>: I2V FL2VA int8 + turbo 8-step, <code>first_frame</code> fixo,
+mesma seed (1353) e mesma duração em todas. 2) <b>Pontes</b>:
+<code>H3LoadMCtx</code> (tail da raiz A → pin <i>before</i>; head da raiz B → pin
+<i>after</i>) → <code>H3MCtxPinSpec</code> encadeado → <code>H3MCtxApplyPins</code> injeta
+os latents como âncoras de keyframe nativas do H3; prompt curto
+("single continuous shot, no cuts…"). 3) <b>Montagem</b>: <code>H3Assemble</code> corta
+pela linhagem dos sidecars <code>.mctx.safetensors</code> — stream-copy do vídeo, áudio
+re-codificado como trilha contínua.</p>
+<p class="note ok">Lição dos vídeos: janela pinada tem que cair em frame limpo; ponte precisa
+de folga de tempo (pediu 243f, entregou ~157f); prompt longo na ponte vira hard cut.</p>
+</section>
+
+<footer>Engines: MOSS-Image · MiniMax H3 (FL2VA int8 + turbo) · comfyui-obvpm (MCtx pins) ·
+comfyui-obvpm-timeline (assemble) · faster-whisper QA — <a href="../index.html">index</a> · out/2026</footer>
+</div></body></html>
