@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>v26 · Téo & Nina — histórias novas, take contínuo</title>
+<style>
+:root{--bg:#07090A;--bg2:#0D1014;--card:#10141A;--line:rgba(255,255,255,.09);--text:#EDEFF2;--muted:#9099A8;--amber:#F2B84B;--green:#17CE73;--head:Impact,sans-serif;--body:"Segoe UI",system-ui,sans-serif}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 var(--body)}
+a{color:#4D86FF;text-decoration:none}a:hover{text-decoration:underline}
+.hero{background:linear-gradient(180deg,#100B04,#241705 30%,#38260B 55%,#080502 85%,var(--bg));padding:26px 24px 88px;color:#fff}
+.hero-in{max-width:1180px;margin:0 auto}.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.chip{border:1px solid rgba(255,255,255,.4);border-radius:999px;padding:5px 13px;font-size:13px;font-weight:600;background:rgba(0,0,0,.3)}
+h1{font:400 clamp(40px,7.5vw,88px)/.98 var(--head);text-transform:uppercase;margin:40px 0 16px;max-width:980px}
+.lead{font-size:clamp(16px,2vw,20px);max-width:860px;color:rgba(255,255,255,.94);margin:0}
+.wrap{max-width:1180px;margin:-52px auto 0;padding:0 24px 80px}
+section{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:26px 28px;margin:0 0 26px}
+.eyebrow{font:400 13px monospace;color:var(--amber);letter-spacing:.08em;text-transform:uppercase;margin:0 0 6px}
+h2{font:400 clamp(26px,3.6vw,40px)/1.05 var(--head);text-transform:uppercase;margin:0 0 14px}
+.note{border-left:3px solid var(--amber);background:var(--bg2);border-radius:0 12px 12px 0;padding:12px 16px;margin:14px 0;font-size:15px}
+.note.ok{border-color:var(--green)}
+.reels{display:grid;grid-template-columns:repeat(2,minmax(300px,420px));gap:20px;margin:18px auto;justify-content:center}
+.reels figure{margin:0;background:var(--bg2);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.reels video{width:100%;display:block;aspect-ratio:9/16;background:#000}
+figcaption{padding:12px 14px;font-size:14px;color:var(--muted);line-height:1.55}figcaption b{color:var(--text)}
+.gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:16px auto;max-width:500px}
+.gallery figure{margin:0;background:var(--bg2);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.gallery img{width:100%;display:block;background:#000;aspect-ratio:9/16;object-fit:cover}
+code{background:var(--bg2);border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-size:13px}
+footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-size:14px;text-align:center}
+@media(max-width:760px){.reels{grid-template-columns:1fr}}
+</style></head><body>
+<header class="hero"><div class="hero-in">
+<h1>Téo &amp; Nina</h1>
+<p class="lead">Duas histórias novas, nada a ver entre si — <b>30 segundos contínuos cada</b>,
+na arquitetura de cadeia latente da v25, agora com o <b>LoRA "Natural Face and Speech"</b>
+(fala com boca sempre em movimento), <b>Realism Slider</b>, roteiro que preenche o take
+inteiro e <b>QA por take com re-roll automático</b>: o whisper confere as palavras-chave
+de cada fala antes de aprovar o take.</p>
+<div class="chips">
+<span class="chip">2 personagens novos · MOSS-Image</span>
+<span class="chip">Cadeia 1 raiz + 3 extensões · sem corte</span>
+<span class="chip">LoRA nafasp + Realism</span>
+<span class="chip">QA whisper por take · re-roll</span>
+</div></div></header>
+<div class="wrap">
+
+<section id="reels">
+<p class="eyebrow">Entregáveis · 30,0s cada · 576×1024</p>
+<h2>Dos takes contínuos</h2>
+<div class="reels">
+<figure><video src="video/story_teo.mp4" controls playsinline></video>
+<figcaption><b>Téo, barista — "O pedido impossível"</b>: <i>"Trabalho num café há três
+anos. Chegou um cliente pedindo um drink secreto que só existe na internet, vinte e dois
+ingredientes, gelo defumado… Eu falei: meu amigo, aqui a gente faz café. Ele disse: então
+me surpreende. Fiz um expresso duplo com raspas de laranja. Ele ficou em silêncio… e
+pediu outro. Às vezes, menos é mais."</i></figcaption></figure>
+<figure><video src="video/story_nina.mp4" controls playsinline></video>
+<figcaption><b>Nina, tatuadora — "A primeira tatuagem"</b>: <i>"Todo tatuador tem aquela
+história. A minha começa aos dezenove, no meu próprio braço: máquina emprestada, agulha
+tremendo na primeira linha. Ninguém percebeu — eu percebi. Fiquei semanas olhando aquele
+traço torto no espelho. Hoje ele é meu lembrete: perfeição não é o começo. Começar é o
+começo."</i></figcaption></figure>
+</div>
+<h3>As personagens</h3>
+<div class="gallery">
+<figure><img src="stills/char_teo.png" alt="Téo"><figcaption><b>Téo</b> · barista, manhã de café</figcaption></figure>
+<figure><img src="stills/char_nina.png" alt="Nina"><figcaption><b>Nina</b> · tatuadora, estúdio neon</figcaption></figure>
+</div>
+</section>
+
+<section id="how">
+<p class="eyebrow">Correções da v25 → v26</p>
+<h2>O que mudou</h2>
+<p><b>Boca parada com áudio (v25, 16-19s)</b>: a linha do take terminava antes do vídeo e o
+modelo "murmurava" de boca fechada. Agora o roteiro preenche ~95% de cada take, o prompt
+exige "mouth moving naturally with every word" e o LoRA <code>nafasp</code>
+(Natural Face &amp; Speech — "flawless speech sync") entra em todos os takes.</p>
+<p><b>"Cinkenta cinkenta"</b>: trava-línguas com número repetido banido do roteiro; e cada
+take passa pelo whisper antes de ser aceito — se a transcrição não contém as
+palavras-chave, o take é re-renderizado com outra seed (até 3 tentativas).</p>
+<p class="note ok">Stack de modelos: ref2va int8 + turbo 4-step + nafasp 0.8 + Realism
+Slider 1.0 — 5,0min/take na 3070 8GB, sem OOM. QA final reconfere: diferença entre frames
+(sem picos de corte), consistência de cena (mesmo fundo do início ao fim) e diálogo
+transcrito por inteiro.</p>
+</section>
+
+<footer>Engines: MOSS-Image · MiniMax H3 (ref2va int8 + turbo + nafasp + realism) ·
+comfyui-obvpm (MCtx + assemble) · faster-whisper QA · ffmpeg —
+<a href="../index.html">index</a> · out/2026</footer>
+</div></body></html>
