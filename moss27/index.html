@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>v27 · Téo & Nina — qualidade final</title>
+<style>
+:root{--bg:#07090A;--bg2:#0D1014;--card:#10141A;--line:rgba(255,255,255,.09);--text:#EDEFF2;--muted:#9099A8;--amber:#F2B84B;--green:#17CE73;--head:Impact,sans-serif;--body:"Segoe UI",system-ui,sans-serif}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 var(--body)}
+a{color:#4D86FF;text-decoration:none}a:hover{text-decoration:underline}
+.hero{background:linear-gradient(180deg,#0A0410,#1A0A24 30%,#2A1238 55%,#060310 85%,var(--bg));padding:26px 24px 88px;color:#fff}
+.hero-in{max-width:1180px;margin:0 auto}.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.chip{border:1px solid rgba(255,255,255,.4);border-radius:999px;padding:5px 13px;font-size:13px;font-weight:600;background:rgba(0,0,0,.3)}
+h1{font:400 clamp(40px,7.5vw,88px)/.98 var(--head);text-transform:uppercase;margin:40px 0 16px;max-width:980px}
+.lead{font-size:clamp(16px,2vw,20px);max-width:860px;color:rgba(255,255,255,.94);margin:0}
+.wrap{max-width:1180px;margin:-52px auto 0;padding:0 24px 80px}
+section{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:26px 28px;margin:0 0 26px}
+.eyebrow{font:400 13px monospace;color:var(--amber);letter-spacing:.08em;text-transform:uppercase;margin:0 0 6px}
+h2{font:400 clamp(26px,3.6vw,40px)/1.05 var(--head);text-transform:uppercase;margin:0 0 14px}
+.note{border-left:3px solid var(--amber);background:var(--bg2);border-radius:0 12px 12px 0;padding:12px 16px;margin:14px 0;font-size:15px}
+.note.ok{border-color:var(--green)}
+.reels{display:grid;grid-template-columns:repeat(2,minmax(300px,420px));gap:20px;margin:18px auto;justify-content:center}
+.reels figure{margin:0;background:var(--bg2);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.reels video{width:100%;display:block;aspect-ratio:9/16;background:#000}
+figcaption{padding:12px 14px;font-size:14px;color:var(--muted);line-height:1.55}figcaption b{color:var(--text)}
+code{background:var(--bg2);border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-size:13px}
+.metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin:14px 0}
+.metric{background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+.metric b{display:block;font-size:22px;color:var(--green)}.metric span{font-size:13px;color:var(--muted)}
+footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-size:14px;text-align:center}
+@media(max-width:760px){.reels{grid-template-columns:1fr}}
+</style></head><body>
+<header class="hero"><div class="hero-in">
+<h1>Qualidade final</h1>
+<p class="lead">As mesmas histórias da v26, refeitas com o pipeline refinado: <b>fala
+calibrada por taxa medida</b> (2,05 palavras/s — sem palavra extra, sem frase cortada),
+<b>pin de 90 frames</b> na emenda crítica (estabiliza a continuação), <b>cadeia de áudio</b>
+(denoise espectral + de-esser + EQ presença/ar + compressor), <b>sharpen + grain</b> e
+<b>RIFE 48fps</b>.</p>
+<div class="chips">
+<span class="chip">Téo 30,0s · botão "menos é mais" fecha exato</span>
+<span class="chip">Nina 31,8s · final completo</span>
+<span class="chip">Diálogo 0→fim sem lacunas</span>
+<span class="chip">48fps · áudio masterizado</span>
+</div></div></header>
+<div class="wrap">
+
+<section id="reels">
+<p class="eyebrow">Entregáveis · 576×1024 · 48fps · LUFS -14</p>
+<h2>Os dois reels</h2>
+<div class="reels">
+<figure><video src="video/story_teo.mp4" controls playsinline></video>
+<figcaption><b>Téo, barista — "O pedido impossível"</b>: <i>"Trabalho num café há três
+anos… Aí chegou um cliente pedindo um drink secreto da internet, com vinte e dois
+ingredientes. Eu olhei pra ele e falei: meu amigo, aqui a gente faz café. Ele disse:
+me surpreende. Fiz um café duplo com toque de laranja. Ele provou, em silêncio, e pediu
+outro. Menos é mais."</i></figcaption></figure>
+<figure><video src="video/story_nina.mp4" controls playsinline></video>
+<figcaption><b>Nina, tatuadora — "A primeira tatuagem"</b>: <i>"Todo tatuador tem aquela
+história. A minha começa aos dezenove, no meu próprio braço: máquina emprestada, agulha
+tremendo na primeira linha. Fiquei semanas encarando aquele traço torto no espelho…
+Hoje esse traço é meu lembrete. Começar é o começo, e foi por isso que eu nunca mais
+parei."</i></figcaption></figure>
+</div>
+<div class="metrics">
+<div class="metric"><b>0</b><span>palavras extras (QA por take: keywords + Δpalavras + cena, re-roll até limpo)</span></div>
+<div class="metric"><b>30,0s</b><span>Téo fecha "menos é mais" exatamente no fim (calibrado a 2,05 w/s)</span></div>
+<div class="metric"><b>90f</b><span>pin estendido na emenda instável — abertura sem lixo fonético</span></div>
+<div class="metric"><b>48fps</b><span>RIFE v4.26 sobre a masterização de áudio (de-ess + EQ + comp)</span></div>
+</div>
+<p class="note ok">Lição da v27: a taxa de fala real do H3 é ~2,05 palavras/s (com
+pausas) — roteiro se calibra por palavra contada, não por "achismo de segundos". E quando
+uma emenda encadeada insiste em abrir com lixo, o pin de 90 frames (3,75s de contexto
+latent) estabiliza; 39 é o mínimo, não o ótimo.</p>
+</section>
+
+<section id="how">
+<p class="eyebrow">Correções v26 → v27</p>
+<h2>O que mudou</h2>
+<p><b>Palavra extra no meio</b>: roteiro escrito para preencher 95% do take + QA de
+contagem de palavras por take (whisper vs roteiro, delta ≤ 1 palavra) com re-roll
+automático — 7 takes foram re-renderizados sozinhos até saírem limpos.</p>
+<p><b>Última frase cortada</b>: orçamento total de ~61-66 palavras por vídeo (taxa
+medida), botão curto no take final, trim com fade — as duas frases de fechamento agora
+cabem.</p>
+<p><b>Áudio sintético</b>: pesquisa (Civitai + web) mostrou que melhoras de voz do H3 são
+post-training em nuvem (fal H3 Max, Pika Flex) — local, o caminho é masterização:
+<code>afftdn</code> (denoise leve) + <code>deesser</code> + EQ (corta boxiness 300Hz,
+presença 3,4kHz, ar 7,5kHz) + compressor suave + loudnorm. Vídeo: sharpen adaptativo +
+grain fino + RIFE 48fps.</p>
+</section>
+
+<footer>Engines: MiniMax H3 (ref2va int8 + turbo 4-step + nafasp + realism) ·
+comfyui-obvpm (MCtx pins 39/90 + assemble) · RIFE v4.26 · faster-whisper QA · ffmpeg —
+<a href="../index.html">index</a> · out/2026</footer>
+</div></body></html>
