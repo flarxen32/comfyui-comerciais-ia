@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>v35 · Luna & Rion — original ao lado da IA</title>
+<style>
+:root{--bg:#07090A;--bg2:#0D1014;--card:#10141A;--line:rgba(255,255,255,.09);--text:#EDEFF2;--muted:#9099A8;--amber:#F2B84B;--green:#17CE73;--head:Impact,sans-serif;--body:"Segoe UI",system-ui,sans-serif}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 var(--body)}
+a{color:#4D86FF;text-decoration:none}a:hover{text-decoration:underline}
+.hero{background:linear-gradient(180deg,#050E0A,#0B2418 30%,#123826 55%,#040C07 85%,var(--bg));padding:26px 24px 88px;color:#fff}
+.hero-in{max-width:1180px;margin:0 auto}.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.chip{border:1px solid rgba(255,255,255,.4);border-radius:999px;padding:5px 13px;font-size:13px;font-weight:600;background:rgba(0,0,0,.3)}
+h1{font:400 clamp(40px,7.5vw,88px)/.98 var(--head);text-transform:uppercase;margin:40px 0 16px;max-width:980px}
+.lead{font-size:clamp(16px,2vw,20px);max-width:860px;color:rgba(255,255,255,.94);margin:0}
+.wrap{max-width:1180px;margin:-52px auto 0;padding:0 24px 80px}
+section{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:26px 28px;margin:0 0 26px}
+.eyebrow{font:400 13px monospace;color:var(--amber);letter-spacing:.08em;text-transform:uppercase;margin:0 0 6px}
+h2{font:400 clamp(26px,3.6vw,40px)/1.05 var(--head);text-transform:uppercase;margin:0 0 14px}
+.note{border-left:3px solid var(--amber);background:var(--bg2);border-radius:0 12px 12px 0;padding:12px 16px;margin:14px 0;font-size:15px}
+.note.ok{border-color:var(--green}
+.sbs{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:18px 0}
+.sbs figure{margin:0;background:var(--bg2);border:1px solid var(--line);border-radius:16px;overflow:hidden;position:relative}
+.sbs video{width:100%;display:block;background:#000;aspect-ratio:9/16}
+.sbs .label{position:absolute;top:10px;left:10px;padding:6px 14px;border-radius:8px;font-weight:700;font-size:15px;z-index:1}
+.label-orig{background:rgba(0,0,0,.7);color:#fff;border:1px solid rgba(255,255,255,.3)}
+.label-ia{background:rgba(0,0,0,.7);color:var(--amber);border:1px solid rgba(242,184,75,.4)}
+figcaption{padding:12px 14px;font-size:14px;color:var(--muted);line-height:1.55}figcaption b{color:var(--text)}
+.metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin:14px 0}
+.metric{background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+.metric b{display:block;font-size:22px;color:var(--green)}.metric span{font-size:13px;color:var(--muted)}
+footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-size:14px;text-align:center}
+@media(max-width:760px){.sbs{grid-template-columns:1fr}}
+</style></head><body>
+<header class="hero"><div class="hero-in">
+<h1>Original × IA</h1>
+<p class="lead">Os virais reais ao lado da nossa versão — <b>dois players separados no HTML</b>,
+você controla cada um. A coreografia original à esquerda, a personagem IA à direita,
+sincronizadas pelo mesmo vídeo de referência. Com <b>Sharper Video</b> e
+<b>Perfect Hands</b> LoRAs contra o borrão, e <b>apenas 1 crossfade</b> no meio
+(parece um vídeo só).</p>
+<div class="chips">
+<span class="chip">Luna · blazer branco · parking brutalist</span>
+<span class="chip">Rion · burgundy silk · estúdio</span>
+<span class="chip">Sharper Video + Perfect Hands LoRAs</span>
+<span class="chip">1 crossfade em 10s · 48fps</span>
+</div></div></header>
+<div class="wrap">
+
+<section id="reels">
+<p class="eyebrow">Entregáveis · 576×1024 · 48fps · ~10,3s</p>
+<h2>Os comparativos</h2>
+
+<div class="sbs">
+<figure>
+<span class="label label-orig">ORIGINAL</span>
+<video src="video/orig_giveitup.mp4" controls playsinline></video>
+<figcaption><b>Viral original</b>: "GIVE IT UP" — Dj TQ remix, 513K views no YouTube.
+Trecho contínuo de 10s da coreografia.</figcaption>
+</figure>
+<figure>
+<span class="label label-ia">NOSSA IA</span>
+<video src="video/story_luna.mp4" controls playsinline></video>
+<figcaption><b>Luna</b> executando a mesma coreografia com o Pika H3 Flex +
+Sharper Video 1.5 + Perfect Hands. Trilha trap (Ace-Step).</figcaption>
+</figure>
+</div>
+
+<div class="sbs">
+<figure>
+<span class="label label-orig">ORIGINAL</span>
+<video src="video/orig_korean.mp4" controls playsinline></video>
+<figcaption><b>Viral original</b>: Korean TikTok dance challenge, 607K views.
+Trecho contínuo de 10s.</figcaption>
+</figure>
+<figure>
+<span class="label label-ia">NOSSA IA</span>
+<video src="video/story_rion.mp4" controls playsinline></video>
+<figcaption><b>Rion</b> executando a mesma coreografia. Trilha R&B (Ace-Step).</figcaption>
+</figure>
+</div>
+
+<div class="metrics">
+<div class="metric"><b>2</b><span>takes por reel (5,17s cada) = 1 crossfade em 10,3s — o mínimo possível</span></div>
+<div class="metric"><b>0.8</b><span>Sharper Video strength (1.5 matava o movimento; 0.8 afia sem travar)</span></div>
+<div class="metric"><b>0.3</b><span>Perfect Hands strength (LoRA overtrained — peso baixo por design)</span></div>
+<div class="metric"><b>3,9-6,6</b><span>motion mediano por take — energia preservada com nitidez melhorada</span></div>
+</div>
+
+<p class="note ok"><b>Pesquisa anti-borrão</b>: a comunidade identificou que o lightx2v
+ref2v turbo borra mãos (HF discussion #33). A solução: LoRA <b>Sharper Video</b>
+(saliacoel) que aumenta nitidez em movimento + <b>Polyhedron Perfect Hands</b> que
+melhora dedos e pele. A força do Sharper teve que ser calibrada: 1.5 amortecia o
+movimento (motion caía para 0.7); 0.8 mantém a dança viva e as mãos mais nítidas.</p>
+</section>
+
+<footer>Engines: MiniMax H3 int8 + Pika H3 Flex + Sharper Video + Perfect Hands ·
+treg (pesquisa de virais) · yt-dlp · Ace-Step · RIFE v4.26 · ffmpeg —
+<a href="../index.html">index</a> · nov/2026</footer>
+</div></body></html>
