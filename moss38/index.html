@@ -47,39 +47,39 @@
 </div>
 <h2>Efeitos video-to-video (IC-LoRA) — PENDENTES (bug LoRA×quant)</h2>
 <div class="grid">
-  <div class="card"><video controls preload="metadata" src="compare/day2night_compare.mp4"></video>
+  <div class="card"><video muted loop playsinline preload="metadata" src="src/street.mp4" style="filter:grayscale(.4) brightness(.75)"></video><div style="position:relative;margin-top:-56px;padding:16px 14px 8px;font-size:11px;letter-spacing:1px;color:#F2B84B;font-weight:700">⏳ ORIGINAL CARREGADO — EFEITO PENDENTE (bug LoRA×quant)</div>
     <div class="info"><h3>Day to Night <span class="badge b-ok">1.0</span></h3><p>Rua com pedestres → noite: postes acesos, vitrines iluminadas, asfalto refletindo. O efeito mais confiável segundo o vídeo original.</p></div></div>
-  <div class="card"><video controls preload="metadata" src="compare/clean_plate_compare.mp4"></video>
+  <div class="card"><video muted loop playsinline preload="metadata" src="src/street.mp4" style="filter:grayscale(.4) brightness(.75)"></video><div style="position:relative;margin-top:-56px;padding:16px 14px 8px;font-size:11px;letter-spacing:1px;color:#F2B84B;font-weight:700">⏳ ORIGINAL CARREGADO — EFEITO PENDENTE (bug LoRA×quant)</div>
     <div class="info"><h3>Clean Plate <span class="badge b-ok">1.0</span></h3><p>Remove os pedestres e reconstrói o fundo vazio (sem máscara). Base de composição para VFX.</p></div></div>
-  <div class="card"><video controls preload="metadata" src="compare/water_compare.mp4"></video>
+  <div class="card"><video muted loop playsinline preload="metadata" src="src/street.mp4" style="filter:grayscale(.4) brightness(.75)"></video><div style="position:relative;margin-top:-56px;padding:16px 14px 8px;font-size:11px;letter-spacing:1px;color:#F2B84B;font-weight:700">⏳ ORIGINAL CARREGADO — EFEITO PENDENTE (bug LoRA×quant)</div>
     <div class="info"><h3>Water Simulation <span class="badge b-warn">1.0</span></h3><p>Trigger "ADD WATER": rua alagada com água na altura do joelho. No vídeo original só funcionou bem a 1280×704 — aqui testado a 960×544.</p></div></div>
-  <div class="card"><video controls preload="metadata" src="compare/deblur_compare.mp4"></video>
+  <div class="card"><video muted loop playsinline preload="metadata" src="src/street_blur.mp4" style="filter:grayscale(.4) brightness(.75)"></video><div style="position:relative;margin-top:-56px;padding:16px 14px 8px;font-size:11px;letter-spacing:1px;color:#F2B84B;font-weight:700">⏳ ORIGINAL CARREGADO — EFEITO PENDENTE (bug LoRA×quant)</div>
     <div class="info"><h3>Deblur <span class="badge b-ok">1.0</span></h3><p>Clipe deliberadamente borrado (gblur σ=6) → foco reconstruído. "É um palpite, não recuperação real" — não confiar em detalhes.</p></div></div>
-  <div class="card"><video controls preload="metadata" src="compare/decompression_compare.mp4"></video>
+  <div class="card"><video muted loop playsinline preload="metadata" src="src/desk_crushed.mp4" style="filter:grayscale(.4) brightness(.75)"></video><div style="position:relative;margin-top:-56px;padding:16px 14px 8px;font-size:11px;letter-spacing:1px;color:#F2B84B;font-weight:700">⏳ ORIGINAL CARREGADO — EFEITO PENDENTE (bug LoRA×quant)</div>
     <div class="info"><h3>Decompression <span class="badge b-ok">1.0</span></h3><p>80 kbps em 480×272 → restauração de gradientes e detalhe. No original "inventa texto" em telas.</p></div></div>
-  <div class="card"><video controls preload="metadata" src="compare/colorization_compare.mp4"></video>
+  <div class="card"><video muted loop playsinline preload="metadata" src="src/bw_train_gray.mp4" style="filter:grayscale(.4) brightness(.75)"></video><div style="position:relative;margin-top:-56px;padding:16px 14px 8px;font-size:11px;letter-spacing:1px;color:#F2B84B;font-weight:700">⏳ ORIGINAL CARREGADO — EFEITO PENDENTE (bug LoRA×quant)</div>
     <div class="info"><h3>Colorization <span class="badge b-ok">1.3</span></h3><p>“Chegada do trem” dos Irmãos Lumière (1896) em P&B → cor. Strength 1.3 (em 1.0 a cor volta lavada).</p></div></div>
-  <div class="card"><video controls preload="metadata" src="compare/restore_compare.mp4"></video>
+  <div class="card"><video muted loop playsinline preload="metadata" src="src/bw_arch_gray.mp4" style="filter:grayscale(.4) brightness(.75)"></video><div style="position:relative;margin-top:-56px;padding:16px 14px 8px;font-size:11px;letter-spacing:1px;color:#F2B84B;font-weight:700">⏳ ORIGINAL CARREGADO — EFEITO PENDENTE (bug LoRA×quant)</div>
     <div class="info"><h3>Restore <span class="badge b-ok">1.0</span></h3><p>Footage de arquivo NY anos 1900: limpa dano, coloriza junto. Switch: 0.7 desliga, 1.4 altera a cor.</p></div></div>
-  <div class="card"><video controls preload="metadata" src="compare/refine_compare.mp4"></video>
+  <div class="card"><video muted loop playsinline preload="metadata" src="src/desk.mp4" style="filter:grayscale(.4) brightness(.75)"></video><div style="position:relative;margin-top:-56px;padding:16px 14px 8px;font-size:11px;letter-spacing:1px;color:#F2B84B;font-weight:700">⏳ ORIGINAL CARREGADO — EFEITO PENDENTE (bug LoRA×quant)</div>
     <div class="info"><h3>Refine Details <span class="badge b-warn">1.0</span></h3><p>Afinação de detalhe em footage limpo. O autor do vídeo achou "dificilmente visível" — teste local.</p></div></div>
-  <div class="card"><video controls preload="metadata" src="compare/upscale2x_compare.mp4"></video>
+  <div class="card"><video muted loop playsinline preload="metadata" src="src/street_small.mp4" style="filter:grayscale(.4) brightness(.75)"></video><div style="position:relative;margin-top:-56px;padding:16px 14px 8px;font-size:11px;letter-spacing:1px;color:#F2B84B;font-weight:700">⏳ ORIGINAL CARREGADO — EFEITO PENDENTE (bug LoRA×quant)</div>
     <div class="info"><h3>Pixel Upscaler ×2 <span class="badge b-ok">1.0</span></h3><p>480×272 com nearest → 960×544. No original mudou rostos em footage real — comparar placas e rostos.</p></div></div>
-  <div class="card"><video controls preload="metadata" src="compare/alpha_gen_compare.mp4"></video>
+  <div class="card"><video muted loop playsinline preload="metadata" src="src/dancer.mp4" style="filter:grayscale(.4) brightness(.75)"></video><div style="position:relative;margin-top:-56px;padding:16px 14px 8px;font-size:11px;letter-spacing:1px;color:#F2B84B;font-weight:700">⏳ ORIGINAL CARREGADO — EFEITO PENDENTE (bug LoRA×quant)</div>
     <div class="info"><h3>Alpha Gen <span class="badge b-ok">1.0</span></h3><p>Matte P&B sem green screen (prompt VAZIO). Dançarina: cabelo e vestido são a prova de fogo. Corta o foreground inteiro.</p></div></div>
-  <div class="card"><video controls preload="metadata" src="compare/sdr2hdr_compare.mp4"></video>
+  <div class="card"><video muted loop playsinline preload="metadata" src="src/rain_win.mp4" style="filter:grayscale(.4) brightness(.75)"></video><div style="position:relative;margin-top:-56px;padding:16px 14px 8px;font-size:11px;letter-spacing:1px;color:#F2B84B;font-weight:700">⏳ ORIGINAL CARREGADO — EFEITO PENDENTE (bug LoRA×quant)</div>
     <div class="info"><h3>SDR → HDR <span class="badge b-warn">1.0 fixo</span></h3><p>Conversão SDR 8-bit → HDR 16-bit. Sem prompt (embedding fixo). Melhor visto em monitor HDR.</p></div></div>
 </div>
 
 <h2>Modos próprios — PENDENTES</h2>
 <div class="grid">
-  <div class="card"><video controls preload="metadata" src="compare/layout2render_compare.mp4"></video>
+  <div class="card"><video muted loop playsinline preload="metadata" src="src/gray_blocks.mp4" style="filter:grayscale(.4) brightness(.75)"></video><div style="position:relative;margin-top:-56px;padding:16px 14px 8px;font-size:11px;letter-spacing:1px;color:#F2B84B;font-weight:700">⏳ ORIGINAL CARREGADO — EFEITO PENDENTE (bug LoRA×quant)</div>
     <div class="info"><h3>Layout to Render <span class="badge b-ok">1.0</span></h3><p>Blockout cinza gerado por ffmpeg (caixas + "câmera") + look de rua neon como first frame → render final. O efeito viral do vídeo.</p></div></div>
-  <div class="card"><video controls preload="metadata" src="compare/cinemagraph_compare.mp4"></video>
+  <div class="card"><video muted loop playsinline preload="metadata" src="src/rain_win.mp4" style="filter:grayscale(.4) brightness(.75)"></video><div style="position:relative;margin-top:-56px;padding:16px 14px 8px;font-size:11px;letter-spacing:1px;color:#F2B84B;font-weight:700">⏳ ORIGINAL CARREGADO — EFEITO PENDENTE (bug LoRA×quant)</div>
     <div class="info"><h3>Cinemagraph <span class="badge b-ok">1.1</span></h3><p>Trigger <code>CINEMAGRAPH_MOTION</code>: foto de chuva na janela → só a chuva e os bokeh se movem, resto congelado.</p></div></div>
-  <div class="card"><video controls preload="metadata" src="compare/slowmo_compare.mp4"></video>
+  <div class="card"><video muted loop playsinline preload="metadata" src="src/skate.mp4" style="filter:grayscale(.4) brightness(.75)"></video><div style="position:relative;margin-top:-56px;padding:16px 14px 8px;font-size:11px;letter-spacing:1px;color:#F2B84B;font-weight:700">⏳ ORIGINAL CARREGADO — EFEITO PENDENTE (bug LoRA×quant)</div>
     <div class="info"><h3>Slow Motion <span class="badge b-ok">1.0 · speed 0.2</span></h3><p>Foto de skatista → slow-mo. Speed é numérico (não palavra): conditioning em 120 fps renderiza 24 fps = 5× mais lento.</p></div></div>
-  <div class="card"><video controls preload="metadata" src="compare/ingredients_compare.mp4"></video>
+  <div class="card"><video muted loop playsinline preload="metadata" src="src/street.mp4" style="filter:grayscale(.4) brightness(.75)"></video><div style="position:relative;margin-top:-56px;padding:16px 14px 8px;font-size:11px;letter-spacing:1px;color:#F2B84B;font-weight:700">⏳ ORIGINAL CARREGADO — EFEITO PENDENTE (bug LoRA×quant)</div>
     <div class="info"><h3>Ingredients <span class="badge b-warn">1.0</span></h3><p>Reference sheet (painéis no preto) → vídeo com o personagem. No original falhou 9/9 (copiou o grid) — será que aqui cola?</p></div></div>
 </div>
 
