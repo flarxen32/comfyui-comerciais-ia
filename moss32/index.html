@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>v32 · Bella & Manu — Pika H3 Flex</title>
+<style>
+:root{--bg:#07090A;--bg2:#0D1014;--card:#10141A;--line:rgba(255,255,255,.09);--text:#EDEFF2;--muted:#9099A8;--amber:#F2B84B;--green:#17CE73;--head:Impact,sans-serif;--body:"Segoe UI",system-ui,sans-serif}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 var(--body)}
+a{color:#4D86FF;text-decoration:none}a:hover{text-decoration:underline}
+.hero{background:linear-gradient(180deg,#050E0A,#0B2418 30%,#123826 55%,#040C07 85%,var(--bg));padding:26px 24px 88px;color:#fff}
+.hero-in{max-width:1180px;margin:0 auto}.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.chip{border:1px solid rgba(255,255,255,.4);border-radius:999px;padding:5px 13px;font-size:13px;font-weight:600;background:rgba(0,0,0,.3)}
+h1{font:400 clamp(40px,7.5vw,88px)/.98 var(--head);text-transform:uppercase;margin:40px 0 16px;max-width:980px}
+.lead{font-size:clamp(16px,2vw,20px);max-width:860px;color:rgba(255,255,255,.94);margin:0}
+.wrap{max-width:1180px;margin:-52px auto 0;padding:0 24px 80px}
+section{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:26px 28px;margin:0 0 26px}
+.eyebrow{font:400 13px monospace;color:var(--amber);letter-spacing:.08em;text-transform:uppercase;margin:0 0 6px}
+h2{font:400 clamp(26px,3.6vw,40px)/1.05 var(--head);text-transform:uppercase;margin:0 0 14px}
+.note{border-left:3px solid var(--amber);background:var(--bg2);border-radius:0 12px 12px 0;padding:12px 16px;margin:14px 0;font-size:15px}
+.note.ok{border-color:var(--green)}
+.reels{display:grid;grid-template-columns:repeat(2,minmax(300px,420px));gap:20px;margin:18px auto;justify-content:center}
+.reels figure{margin:0;background:var(--bg2);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.reels video{width:100%;display:block;aspect-ratio:9/16;background:#000}
+figcaption{padding:12px 14px;font-size:14px;color:var(--muted);line-height:1.55}figcaption b{color:var(--text)}
+.metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin:14px 0}
+.metric{background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+.metric b{display:block;font-size:22px;color:var(--green)}.metric span{font-size:13px;color:var(--muted)}
+footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-size:14px;text-align:center}
+@media(max-width:760px){.reels{grid-template-columns:1fr}}
+</style></head><body>
+<header class="hero"><div class="hero-in">
+<h1>Pika H3 Flex</h1>
+<p class="lead">Tudo novo na v32: o motor é o <b>Pika H3 Flex</b> — o único pós-treinamento
+do MiniMax H3 com <b>pesos abertos</b> (LoRA oficial Pika, 6 steps). As fontes virais foram
+re-pesquisadas em resolução maior, as janelas escolhidas com <b>viés anti-borrão</b>
+(movimento forte com pico controlado) e as emendas agora são <b>crossfades de 0,25s</b>
+na batida — chega de cortes secos.</p>
+<div class="chips">
+<span class="chip">Bella, 23 · rooftop dawn</span>
+<span class="chip">Manu, 26 · loft golden hour</span>
+<span class="chip">Pika Flex 6-step · motion 5-15</span>
+<span class="chip">Crossfades na batida · 21s · 48fps</span>
+</div></div></header>
+<div class="wrap">
+
+<section id="reels">
+<p class="eyebrow">Entregáveis · 576×1024 · 48fps</p>
+<h2>Os dois reels</h2>
+<div class="reels">
+<figure><video src="video/story_bella.mp4" controls playsinline></video>
+<figcaption><b>Bella — rooftop ao amanhecer</b>: crop top prateado e legging, quatro
+coreografias do challenge viral com crossfases suaves. Trilha pop-funk.</figcaption></figure>
+<figure><video src="video/story_manu.mp4" controls playsinline></video>
+<figcaption><b>Manu — loft ao entardecer</b>: camisa laranja de cetim e calça branca,
+quatro coreografias da Enola Bedard transferidas com o pico de movimento do projeto
+(max 48,8). Trilha deep house.</figcaption></figure>
+</div>
+<div class="metrics">
+<div class="metric"><b>6</b><span>steps do Pika Flex (pós-treinado p/ qualidade de movimento) no lugar do turbo 4 que borrava as mãos</span></div>
+<div class="metric"><b>0,25s</b><span>crossfade entre takes, alinhado às batidas da trilha — sem corte seco</span></div>
+<div class="metric"><b>5-15</b><span>motion por take (b1=11,4; m2=15,2) — energia da dança original preservada</span></div>
+<div class="metric"><b>anti-blur</b><span>janelas escolhidas por movimento forte com pico controlado (mão rápida penalizada no score)</span></div>
+</div>
+<p class="note ok">A pesquisa achou o [Pika H3 Flex]( pesos abertos no HuggingFace): um
+LoRA de 1,9GB que transforma o H3 que já rodávamos — mesma base int8, mesma VRAM, mas
+com o treino de qualidade da Pika e 6 steps nativos. Foi a resposta ao borrão das mãos
+sem trocar de motor.</p>
+</section>
+
+<footer>Engines: MOSS-Image · MiniMax H3 int8 + Pika H3 Flex LoRA (open weights) ·
+yt-dlp · Ace-Step · RIFE v4.26 · ffmpeg — <a href="../index.html">index</a> · nov/2026</footer>
+</div></body></html>

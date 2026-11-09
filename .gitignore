@@ -1,0 +1,16 @@
+# logs e temporários
+*.log
+__pycache__/
+.DS_Store
+Thumbs.db
+# modelo de voz duplicado (mantém 1 cópia em moss6/tts)
+moss7/tts/*
+moss8/tts/*
+moss9/tts/*
+moss10/tts/*
+moss11/tts/*
+moss12/tts/*
+moss13/tts/*
+# saídas intermediárias grandes
+*/video/seg_*.mp4
+*/video/list_*.txt

@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MOSS-Image · Comercial 20 s — pipeline local</title>
+<style>
+:root{
+  --bg:#07090A; --bg2:#0D1014; --card:#10141A; --line:rgba(255,255,255,.09);
+  --text:#EDEFF2; --muted:#9099A8; --blue:#0053FF; --blue-soft:#4D86FF; --green:#17CE73; --amber:#F2B84B;
+  --head:Impact,"Haettenschweiler","Arial Narrow Bold","Arial Narrow",sans-serif;
+  --body:"Segoe UI",system-ui,-apple-system,Roboto,Helvetica,Arial,sans-serif;
+  --mono:"Cascadia Mono",Consolas,Menlo,monospace;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 var(--body);-webkit-font-smoothing:antialiased}
+a{color:var(--blue-soft);text-decoration:none} a:hover{text-decoration:underline}
+.hero{background:linear-gradient(180deg,#00380E 0%,#044A16 34%,#063A6E 62%,#02204C 82%,var(--bg) 100%);padding:26px 24px 88px;color:#fff}
+.hero-in{max-width:1180px;margin:0 auto}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.chip{border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:5px 13px;font-size:13px;font-weight:600;background:rgba(0,0,0,.18)}
+h1{font:400 clamp(40px,7.5vw,88px)/.98 var(--head);text-transform:uppercase;margin:40px 0 16px;max-width:980px}
+.lead{font-size:clamp(16px,2vw,20px);max-width:760px;color:rgba(255,255,255,.92);margin:0}
+.wrap{max-width:1180px;margin:-52px auto 0;padding:0 24px 80px}
+section{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:26px 28px;margin:0 0 26px}
+.eyebrow{font:400 13px var(--mono);color:var(--blue-soft);letter-spacing:.08em;text-transform:uppercase;margin:0 0 6px}
+h2{font:400 clamp(26px,3.6vw,40px)/1.05 var(--head);text-transform:uppercase;margin:0 0 14px}
+h3{font-size:17px;margin:24px 0 8px}
+p{margin:0 0 12px}
+.muted{color:var(--muted)}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:16px 0}
+.gallery figure{margin:0;background:var(--bg2);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.gallery img{width:100%;display:block;background:#000}
+figcaption{padding:10px 13px;font-size:13.5px;color:var(--muted);line-height:1.5}
+figcaption b{color:var(--text)}
+.player{background:#000;border-radius:12px;border:1px solid var(--line);overflow:hidden}
+.player video{width:100%;display:block}
+.meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin:14px 0}
+.meta div{background:var(--bg2);border:1px solid var(--line);border-radius:10px;padding:10px 14px;font-size:14px}
+.meta b{display:block;font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:600}
+.timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:14px 0}
+.timeline figure{margin:0}
+.timeline img{width:100%;border-radius:10px;border:1px solid var(--line);display:block}
+.timeline figcaption{font:600 12px var(--body);color:var(--muted);padding:6px 2px;text-align:center}
+pre{background:#0A0D11;border:1px solid var(--line);border-radius:12px;padding:14px 16px;overflow:auto;font:13.5px/1.6 var(--mono);white-space:pre-wrap;word-break:break-word}
+.note{border-left:3px solid var(--blue);background:var(--bg2);border-radius:0 12px 12px 0;padding:12px 16px;margin:14px 0;font-size:15px}
+.note.ok{border-color:var(--green)}
+table{border-collapse:collapse;width:100%;font-size:14.5px;margin:10px 0}
+th,td{border:1px solid var(--line);padding:8px 12px;text-align:left;vertical-align:top}
+th{background:var(--bg2);font-weight:600;color:var(--muted);text-transform:uppercase;font-size:12px;letter-spacing:.05em}
+details{background:var(--bg2);border:1px solid var(--line);border-radius:12px;margin:10px 0;padding:0 16px}
+summary{cursor:pointer;padding:13px 0;font-weight:600}
+footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-size:14px;text-align:center}
+@media(max-width:860px){.gallery{grid-template-columns:1fr 1fr}.timeline{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.gallery{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="hero-in">
+    <h1>MOSS-Image → comercial de 20 s</h1>
+    <p class="lead">Teste a fundo do modelo de imagem da OpenMOSS (lançado 16/10/2026) direto no pipeline local:
+       stills publicitários com <b>texto renderizado dentro da imagem</b> — inclusive em português com acentos —
+       transformados em um comercial de 20&nbsp;s com áudio, 100% gerado na RTX&nbsp;3070 de 8&nbsp;GB.</p>
+    <div class="chips">
+      <span class="chip">ComfyUI v0.42.3 · nativo</span><span class="chip">MOSS-Image 5B SFT int8</span>
+      <span class="chip">Qwen3.5-9B w4a8 (text encoder)</span><span class="chip">MiniMax H3 I2V · vídeo+áudio</span>
+      <span class="chip">Licença Apache-2.0</span><span class="chip">RTX 3070 · 8 GB</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+<!-- ============ O MODELO ============ -->
+<section id="modelo">
+  <p class="eyebrow">Pesquisa · out/2026</p>
+  <h2>O que é o MOSS-Image</h2>
+  <p><b>MOSS-Image</b> é o modelo texto-para-imagem open-weights da <b>OpenMOSS</b> (grupo open-source ligado à
+     Fudan), lançado em <b>16/10/2026</b>. É um <b>DiT de 5B</b> parâmetros treinado do zero, com duas versões:
+     <b>Base</b> (para treinar LoRAs) e <b>SFT</b> (recomendada para gerar — a usada aqui). O que o diferencia de
+     FLUX/SD/Qwen-Image para trabalho comercial:</p>
+  <div class="meta">
+    <div><b>Texto legível</b>96,3% no LongLongTextBench — topo dos open-weights (EN + ZH; PT também funciona, verificado abaixo)</div>
+    <div><b>Layout nativo</b>Prompt em JSON com bounding boxes posiciona título, objeto e copy em coordenadas exatas</div>
+    <div><b>Prompts 4K tokens</b>Captions longas com "prompt enhancer" embutido (desligável)</div>
+    <div><b>Licença</b>Apache-2.0 — uso comercial, derivados e LoRAs permitidos</div>
+  </div>
+  <p class="muted">Limitação: apenas text-to-image (sem img2img/edição/vídeo). Ecossistema já grande na
+     <a href="https://civitai.com/models/3005406/moss-image" target="_blank" rel="noopener">Civitai ↗</a>
+     (checkpoint espelhado, Turbo LoRAs de 8 steps, workflows). A <a href="https://civitai.com/articles/36843/moss-image-text-that-reads-right-prompts-up-to-4k-tokens" target="_blank" rel="noopener">pesquisa completa ↗</a>
+     está nas fontes do rodapé.</p>
+</section>
+
+<!-- ============ SETUP ============ -->
+<section id="setup">
+  <p class="eyebrow">Etapa 1 · Infra</p>
+  <h2>Setup no ComfyUI (nativo, zero custom nodes)</h2>
+  <p>O suporte é <b>nativo a partir do ComfyUI 0.41.3</b>. A engine do workspace (porta 8189) estava na 0.34.0 e foi
+     atualizada para <b>v0.42.3</b> (checkout da tag + <code>pip install -r requirements.txt</code> no python embutido
+     — 2 min). Nenhum plugin instalado.</p>
+  <table>
+    <tr><th>Arquivo (HF Comfy-Org/MOSS-Image)</th><th>Pasta</th><th>Tamanho</th></tr>
+    <tr><td><code>moss_image_sft_int8_convrot.safetensors</code></td><td><code>models/diffusion_models/</code></td><td>5,1 GB</td></tr>
+    <tr><td><code>qwen3.5_9b_w4a8_gptq.safetensors</code></td><td><code>models/text_encoders/</code></td><td>6,9 GB</td></tr>
+    <tr><td><code>flux2-vae_small.safetensors</code></td><td><code>models/vae/</code></td><td>238 MB</td></tr>
+  </table>
+  <p class="muted">Downloads: ~15 min no total. O carregamento dinâmico de VRAM da engine nova comporta os 12 GB de
+     pesos na placa de 8 GB com offload automático — pico medido de 5,7 GB.</p>
+  <h3>Settings validadas</h3>
+  <div class="meta">
+    <div><b>Sampler</b>er_sde · scheduler simple · 25 steps · CFG 2,5</div>
+    <div><b>SLG</b>skip layer guidance na camada 22 (0–50% da difusão)</div>
+    <div><b>Enhancer</b>OFF — controle exato da copy (recomendação oficial p/ peças com texto)</div>
+    <div><b>Resolução</b>múltiplos de 16; 1344×768 e até 1024×1280 testados</div>
+  </div>
+  <details><summary>Workflow API usado (moss_image_t2i_api.json)</summary>
+<pre>{
+  "1":  UNETLoader  → moss_image_sft_int8_convrot
+  "2":  CLIPLoader  → qwen3.5_9b_w4a8_gptq · type: <b>moss_image</b>
+  "3":  VAELoader   → flux2-vae_small
+  "15": SkipLayerGuidanceDiTSimple (single_layers "22", 0 → 0.5)
+  "6":  EmptyFlux2LatentImage (W×H)
+  "7":  KSampler (25 steps · cfg 2.5 · er_sde · simple)
+  "8":  VAEDecode → "9": SaveImage
+}
+negative: nsfw, worst quality, bad anatomy, watermark, jpeg artifact</pre>
+  </details>
+</section>
+
+<!-- ============ STILLS ============ -->
+<section id="stills">
+  <p class="eyebrow">Etapa 2 · Direção de arte</p>
+  <h2>Seis stills, texto impecável</h2>
+  <p>Marca fictícia criada para o teste: <b>MOSS — Eau de Parfum</b>. Cada still saiu em
+     <b>30–40 s</b> na 3070 (25 steps, pesos int8). Todos os textos foram verificados caractere por caractere —
+     incluindo a tagline em português <i>"Onde a floresta mora em você."</i> com acentos perfeitos, o que nenhum
+     outro modelo local desta máquina conseguia.</p>
+
+  <div class="gallery">
+    <figure>
+      <img src="stills/spot_open.png" alt="Frasco sobre pedra com musgo">
+      <figcaption><b>Abertura do spot</b> — macro cinematográfico, rótulo "MOSS". 1344×768 · seed 101 · 40 s</figcaption>
+    </figure>
+    <figure>
+      <img src="stills/spot_pack.png" alt="Packshot em estúdio">
+      <figcaption><b>Packshot</b> — rótulo "MOSS" + "EAU DE PARFUM" em duas linhas. 1344×768 · seed 202 · 30 s</figcaption>
+    </figure>
+    <figure>
+      <img src="stills/endcard.png" alt="End card com layout JSON">
+      <figcaption><b>End card</b> — layout via <b>JSON com bounding boxes</b>; tagline PT-BR com acentos. 1344×768 · seed 303 · 35 s</figcaption>
+    </figure>
+    <figure>
+      <img src="stills/show_fragrance.png" alt="Campanha fragrance minimalista">
+      <figcaption><b>Campanha print</b> — estilo "fragrance editorial": "MOSS" serifado + linha vermelha. 1024×1024 · seed 404 · 30 s</figcaption>
+    </figure>
+    <figure>
+      <img src="stills/show_poster.png" alt="Pôster de viagem MATA">
+      <figcaption><b>Pôster layout JSON</b> — "MATA" + "TRILHAS DA FLORESTA", estética risografia. 1024×1024 · seed 505 · 35 s</figcaption>
+    </figure>
+    <figure>
+      <img src="stills/show_window.png" alt="Vitrine de livraria com pôster FLORESTA">
+      <figcaption><b>Texto em cena</b> — pôster "FLORESTA" legível dentro da fotografia (vitrine noturna). 1024×1280 · seed 606 · 40 s</figcaption>
+    </figure>
+  </div>
+
+  <details><summary>Prompt do end card — layout JSON (o recurso matador p/ peças publicitárias)</summary>
+<pre>{
+  "summary": { "meta": ["poster"], "canvas": "single",
+    "caption": "A minimalist luxury fragrance poster on a deep charcoal background
+                with a clear glass perfume bottle in the center and the brand name
+                MOSS in large white serif capitals." },
+  "items": [
+    { "label": "text", "text": "MOSS",           "bbox": [-350,-320,-210,320] },
+    { "label": "object",                          "bbox": [-80,-75,250,75] },
+    { "label": "text", "text": "EAU DE PARFUM",  "bbox": [280,-170,315,170] },
+    { "label": "text", "text": "Onde a floresta mora em você.", "bbox": [335,-390,370,390] }
+  ],
+  "bbox_coord_space": "abs_centralized", "bbox_format": "yxyx"
+}
+// bbox = [y_min, x_min, y_max, x_max] em px relativos ao centro do canvas</pre>
+  </details>
+  <div class="note ok"><b>Verificação automática:</b> cada still passou por auditoria de visão confirmando a
+     transcrição exata de todo o texto (caractere por caractere), ausência de erros de acentuação e qualidade
+     comercial. 6/6 aprovados.</div>
+</section>
+
+<!-- ============ COMERCIAL ============ -->
+<section id="comercial">
+  <p class="eyebrow">Etapa 3 · O filme</p>
+  <h2>O comercial — "MOSS" · 20 s</h2>
+  <p>Dois takes de 10 s gerados com <b>MiniMax H3 I2V</b> (image-to-video <i>com áudio</i>) a partir dos stills
+     MOSS, montados com o end card em <b>exatos 20 s</b> e upscale para 720p com ffmpeg.</p>
+
+  <div class="player"><video src="video/moss_commercial.mp4" controls playsinline></video></div>
+  <p class="muted" style="margin-top:8px">1280×720 · 24 fps · 20,0 s · áudio ambiente gerado pelo próprio H3 + fades</p>
+
+  <h3>Linha do tempo</h3>
+  <div class="timeline">
+    <figure><img src="stills/spot_open.png" alt=""><figcaption>0–10 s · Take 1 — push-in na floresta (H3 I2V)</figcaption></figure>
+    <figure><img src="stills/spot_pack.png" alt=""><figcaption>10–16,5 s · Take 2 — órbita no packshot (H3 I2V)</figcaption></figure>
+    <figure><img src="stills/endcard.png" alt=""><figcaption>16,5–20 s · End card MOSS (zoom lento)</figcaption></figure>
+    <figure><img src="stills/show_fragrance.png" alt=""><figcaption>Print da campanha (peça bônus)</figcaption></figure>
+  </div>
+
+  <h3>Takes crus (saída direta do H3)</h3>
+  <div class="gallery" style="grid-template-columns:1fr 1fr">
+    <figure>
+      <video src="video/moss_take1.mp4" controls loop muted playsinline style="width:100%;display:block;background:#000"></video>
+      <figcaption><b>Take 1</b> — 832×480 · 243 f @ 24 fps · 4 steps · seed 7001 · "slow dolly-in… god rays sweeping… label MOSS stays sharp" · áudio: ambiência de floresta + pad</figcaption>
+    </figure>
+    <figure>
+      <video src="video/moss_take2.mp4" controls loop muted playsinline style="width:100%;display:block;background:#000"></video>
+      <figcaption><b>Take 2</b> — 832×480 · 243 f @ 24 fps · 4 steps · seed 8002 · "slow orbit… light sweep… label MOSS and EAU DE PARFUM stays sharp" · áudio: pad + gotas d'água</figcaption>
+    </figure>
+  </div>
+
+  <details><summary>Montagem ffmpeg (reproduzível)</summary>
+<pre># 1) take2 cortado em 7 s + end card 4 s com zoom lento (zoompan)
+# 2) xfade 0,6 s entre os 3 blocos + fade-in 0,4 s / fade-out 0,8 s
+# 3) áudio: ambiência dos takes com acrossfade + fade-out no fim
+# 4) upscale 832×480 → 1280×720 (lanczos) + leve grão de filme
+ffmpeg -i moss_take1.mp4 -i moss_take2trim.mp4 -i endcard_zoom.mp4 \
+  -filter_complex "[0:v][1:v]xfade=transition=fade:duration=0.6:offset=9.4[v01];
+                   [v01][2:v]xfade=transition=fade:duration=0.6:offset=15.9[v];
+                   [v]scale=1280:720:flags=lanczos,fade=t=in:st=0:d=0.4,fade=t=out:st=19.2:d=0.8"
+  -map "[v]" ... moss_commercial.mp4</pre>
+  </details>
+</section>
+
+<!-- ============ BENCHMARKS ============ -->
+<section id="benchmarks">
+  <p class="eyebrow">Etapa 4 · Números</p>
+  <h2>Tempos reais na RTX 3070 (8 GB)</h2>
+  <table>
+    <tr><th>Etapa</th><th>Tempo</th><th>Obs.</th></tr>
+    <tr><td>Update ComfyUI 0.34.0 → 0.42.3</td><td>~2 min</td><td>tag + requirements (frontend 1.55.18)</td></tr>
+    <tr><td>Download dos pesos (12,2 GB)</td><td>~15 min</td><td>HF sem token</td></tr>
+    <tr><td>Still MOSS 1344×768 · 25 steps</td><td><b>30–40 s</b></td><td>pesos quentes; pico 5,7 GB VRAM</td></tr>
+    <tr><td>Take H3 I2V 10 s (243 f · 4 steps)</td><td>~5–6 min</td><td>por take, incluindo carga</td></tr>
+    <tr><td>Montagem ffmpeg (20 s · 720p)</td><td>&lt; 1 min</td><td>xfade + upscale lanczos</td></tr>
+  </table>
+  <div class="note"><b>Custo total do comercial:</b> ~15 min de geração após os downloads — um pack de
+     6 peças estáticas + spot de 20 s com áudio saiu de uma GPU de 8 GB, com licença comercial limpa no modelo
+     de imagem (Apache-2.0).</div>
+</section>
+
+<footer>
+  Fontes: <a href="https://openmoss.ai/MOSS-Image" target="_blank" rel="noopener">OpenMOSS</a> ·
+  <a href="https://docs.comfy.org/tutorials/image/moss-image/moss-image" target="_blank" rel="noopener">Docs ComfyUI</a> ·
+  <a href="https://huggingface.co/Comfy-Org/MOSS-Image" target="_blank" rel="noopener">HF Comfy-Org</a> ·
+  <a href="https://civitai.com/models/3005406/moss-image" target="_blank" rel="noopener">Civitai</a> ·
+  <a href="https://arxiv.org/html/2610.23374" target="_blank" rel="noopener">arXiv 2610.23374</a><br>
+  Licenças: MOSS-Image Apache-2.0 (comercial ✅) · MiniMax H3 &lt;US$20M/ano, exclui US/EU/UK/KR (Brasil ✅) · out/2026
+</footer>
+</div>
+</body>
+</html>

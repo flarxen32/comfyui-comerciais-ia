@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>v37 · Nova & Rio — 19s sem corte · multi-ref</title>
+<style>
+:root{--bg:#07090A;--bg2:#0D1014;--card:#10141A;--line:rgba(255,255,255,.09);--text:#EDEFF2;--muted:#9099A8;--amber:#F2B84B;--green:#17CE73;--head:Impact,sans-serif;--body:"Segoe UI",system-ui,sans-serif}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 var(--body)}
+a{color:#4D86FF;text-decoration:none}a:hover{text-decoration:underline}
+.hero{background:linear-gradient(180deg,#0A0510,#1C0B24 30%,#2E1440 55%,#060310 85%,var(--bg));padding:26px 24px 88px;color:#fff}
+.hero-in{max-width:1180px;margin:0 auto}.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.chip{border:1px solid rgba(255,255,255,.4);border-radius:999px;padding:5px 13px;font-size:13px;font-weight:600;background:rgba(0,0,0,.3)}
+h1{font:400 clamp(40px,7.5vw,88px)/.98 var(--head);text-transform:uppercase;margin:40px 0 16px;max-width:980px}
+.lead{font-size:clamp(16px,2vw,20px);max-width:860px;color:rgba(255,255,255,.94);margin:0}
+.wrap{max-width:1180px;margin:-52px auto 0;padding:0 24px 80px}
+section{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:26px 28px;margin:0 0 26px}
+.eyebrow{font:400 13px monospace;color:var(--amber);letter-spacing:.08em;text-transform:uppercase;margin:0 0 6px}
+h2{font:400 clamp(26px,3.6vw,40px)/1.05 var(--head);text-transform:uppercase;margin:0 0 14px}
+.note{border-left:3px solid var(--amber);background:var(--bg2);border-radius:0 12px 12px 0;padding:12px 16px;margin:14px 0;font-size:15px}
+.note.ok{border-color:var(--green)}
+.duo{display:flex;flex-direction:row;flex-wrap:nowrap;gap:14px;margin:18px 0;align-items:stretch}
+.duo figure{flex:1 1 0;min-width:0;margin:0;background:var(--bg2);border:1px solid var(--line);border-radius:16px;overflow:hidden;position:relative}
+.duo video{width:100%;display:block;background:#000;aspect-ratio:9/16}
+.duo .label{position:absolute;top:10px;left:10px;padding:6px 14px;border-radius:8px;font-weight:700;font-size:15px;z-index:1;letter-spacing:.05em}
+.label-orig{background:rgba(0,0,0,.75);color:#fff;border:1px solid rgba(255,255,255,.3)}
+.label-ia{background:rgba(0,0,0,.75);color:var(--amber);border:1px solid rgba(242,184,75,.4)}
+figcaption{padding:12px 14px;font-size:14px;color:var(--muted);line-height:1.55}figcaption b{color:var(--text)}
+.metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin:14px 0}
+.metric{background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+.metric b{display:block;font-size:22px;color:var(--green)}.metric span{font-size:13px;color:var(--muted)}
+footer{border-top:1px solid var(--line);padding:26px 0;color:var(--muted);font-size:14px;text-align:center}
+@media(max-width:640px){.duo{flex-direction:row;gap:8px}.duo figure{min-width:45%}}
+</style></head><body>
+<header class="hero"><div class="hero-in">
+<h1>Sem corte</h1>
+<p class="lead"><b>19,3 segundos contínuos</b> — MCtx latent chaining funde 3 takes em
+um único vídeo sem nenhuma emenda, crossfade ou corte. O original ao lado da IA em
+players separados, lado a lado horizontal.</p>
+<div class="chips">
+<span class="chip">MCtx chaining — 3 takes fundidos por latent</span>
+<span class="chip">ZERO cortes · MULTI-REF (char+ambiente)</span>
+<span class="chip">Sharper Video + Perfect Hands</span>
+<span class="chip">19,3s · 48fps · multi-ref</span>
+</div></div></header>
+<div class="wrap">
+
+<section id="reels">
+<p class="eyebrow">Entregáveis · 576×1024 · 48fps · 19,3s contínuos</p>
+<h2>Original ao lado da IA</h2>
+
+<div class="duo">
+<figure>
+<span class="label label-orig">ORIGINAL</span>
+<video src="video/orig_enola.mp4" controls playsinline></video>
+<figcaption><b>Enola Bedard</b> (2,2M views) — trecho contínuo de 15s da coreografia
+original. Ao lado: <b>Nova</b> executando os mesmos passos.</figcaption>
+</figure>
+<figure>
+<span class="label label-ia">NOSSA IA</span>
+<video src="video/story_nova.mp4" controls playsinline></video>
+<figcaption><b>Nova</b> — 3 takes encadeados por MCtx pins. O latent do take anterior
+alimenta o seguinte: personagem, cenário e movimento continuam sem solução de
+continuidade. Trilha industrial techno.</figcaption>
+</figure>
+</div>
+
+<div class="duo">
+<figure>
+<span class="label label-orig">ORIGINAL</span>
+<video src="video/orig_harimu.mp4" controls playsinline></video>
+<figcaption><b>"Harimu Choreography"</b> (513K views) — trecho contínuo. Ao lado: <b>Rio</b>
+com a mesma coreografia em versão etérea.</figcaption>
+</figure>
+<figure>
+<span class="label label-ia">NOSSA IA</span>
+<video src="video/story_rio.mp4" controls playsinline></video>
+<figcaption><b>Rio</b> — rooftop golden hour, saia fluida, 3 takes MCtx encadeados.
+Trilha baile funk sunset.</figcaption>
+</figure>
+</div>
+
+<div class="metrics">
+<div class="metric"><b>0</b><span>cortes — MCtx pins fundem os takes no latent; H3Assemble segue a linhagem dos sidecars</span></div>
+<div class="metric"><b>5→1</b><span>takes de 5,17s viram 1 vídeo de 12,2s (o pin sobrepõe 39 frames por junção)</span></div>
+<div class="metric"><b>3,3-6,4</b><span>motion por take — o pin dá continuidade, o ref_video dá o movimento</span></div>
+<div class="metric"><b>0.8</b><span>Sharper Video (1.5 matava o movimento; 0.8 afia sem travar a dança)</span></div>
+</div>
+
+<p class="note ok"><b>Como funciona o MCtx chaining</b>: o take 1 é gerado normalmente
+(root). O take 2 carrega o <b>latent do final do take 1</b> como contexto pinado — o
+modelo sabe exatamente onde a personagem estava e continua dali. O take 3 faz o mesmo
+com o final do take 2. A montagem via <code>H3Assemble</code> segue a linhagem gravada
+nos sidecars <code>.mctx.safetensors</code> e junta tudo em um único vídeo contínuo,
+sem re-encodar os frames de junção.</p>
+</section>
+
+<footer>Engines: MiniMax H3 int8 + Pika H3 Flex + Sharper Video + Perfect Hands ·
+MCtx chaining (comfyui-obvpm) · treg (pesquisa) · Ace-Step · RIFE v4.26 —
+<a href="../index.html">index</a> · nov/2026</footer>
+</div></body></html>
